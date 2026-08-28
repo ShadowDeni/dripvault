@@ -1,0 +1,4024 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>DRIPVAULT — Product Sources</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+:root{
+    --bg:#070707;
+    --card:#0e0e0e;
+    --card2:#121212;
+    --border:#222;
+    --text:#fff;
+    --muted:#777;
+    --muted2:#555;
+    --danger:#ff4d4d;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+button,
+input,
+select{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    height:72px;
+    padding:0 6%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:rgba(7,7,7,.92);
+    backdrop-filter:blur(20px);
+    border-bottom:1px solid var(--border);
+}
+
+.logo{
+    color:#fff;
+    text-decoration:none;
+    font-weight:900;
+    font-size:21px;
+    letter-spacing:-1px;
+}
+
+.logo span{
+    color:#555;
+}
+
+.navbar nav{
+    display:flex;
+    gap:28px;
+}
+
+.navbar nav a{
+    color:#777;
+    text-decoration:none;
+    font-size:12px;
+}
+
+.navbar nav a:hover{
+    color:#fff;
+}
+
+.nav-actions{
+    display:flex;
+    gap:8px;
+}
+
+.icon-btn,
+.login-btn{
+    border-radius:8px;
+    padding:10px 14px;
+}
+
+.icon-btn{
+    background:#0e0e0e;
+    border:1px solid var(--border);
+    color:#fff;
+}
+
+.login-btn{
+    background:#fff;
+    color:#000;
+    border:1px solid #fff;
+    font-weight:bold;
+}
+
+.hero{
+    max-width:1200px;
+    margin:auto;
+    padding:120px 6% 100px;
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.status{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 12px;
+    border:1px solid var(--border);
+    background:#0d0d0d;
+    color:#777;
+    border-radius:50px;
+    font-size:9px;
+    margin-bottom:25px;
+}
+
+.status span{
+    width:6px;
+    height:6px;
+    border-radius:50%;
+    background:#777;
+}
+
+.hero h1{
+    font-size:clamp(48px,8vw,90px);
+    line-height:.9;
+    letter-spacing:-6px;
+}
+
+.hero h1 em{
+    color:#444;
+    font-style:normal;
+}
+
+.hero p{
+    margin-top:25px;
+    color:#777;
+    max-width:520px;
+    line-height:1.7;
+    font-size:14px;
+}
+
+.hero-buttons{
+    margin-top:30px;
+    display:flex;
+    gap:10px;
+}
+
+.primary-btn,
+.secondary-btn{
+    display:inline-block;
+    padding:13px 18px;
+    border-radius:8px;
+    text-decoration:none;
+    font-size:11px;
+    font-weight:bold;
+}
+
+.primary-btn{
+    background:#fff;
+    color:#000;
+    border:1px solid #fff;
+}
+
+.secondary-btn{
+    background:#111;
+    border:1px solid var(--border);
+    color:#fff;
+}
+
+.primary-btn:hover{
+    opacity:.88;
+}
+
+.secondary-btn:hover{
+    background:#181818;
+}
+
+.stats{
+    max-width:1200px;
+    margin:auto;
+    padding:0 6% 70px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+}
+
+.stats div{
+    background:#0b0b0b;
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:22px;
+}
+
+.stats strong{
+    display:block;
+    font-size:22px;
+    margin-bottom:5px;
+}
+
+.stats span{
+    color:#555;
+    font-size:10px;
+}
+
+.section{
+    max-width:1200px;
+    margin:auto;
+    padding:55px 6%;
+}
+
+.section-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    margin-bottom:25px;
+}
+
+.section-header small{
+    color:#555;
+    font-size:9px;
+    letter-spacing:2px;
+}
+
+.section-header h2{
+    margin-top:5px;
+    font-size:28px;
+}
+
+.section-header>span{
+    color:#555;
+    font-size:10px;
+}
+
+.categories{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
+.category{
+    padding:10px 15px;
+    background:#0d0d0d;
+    color:#666;
+    border:1px solid var(--border);
+    border-radius:8px;
+    font-size:10px;
+}
+
+.category:hover,
+.category.active{
+    background:#fff;
+    color:#000;
+    border-color:#fff;
+}
+
+.search-row{
+    display:flex;
+    gap:10px;
+    margin-bottom:25px;
+}
+
+.search{
+    flex:1;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:#0d0d0d;
+    border:1px solid var(--border);
+    border-radius:9px;
+    padding:0 14px;
+}
+
+.search span{
+    color:#555;
+    font-size:20px;
+}
+
+.search input{
+    width:100%;
+    padding:14px 0;
+    background:transparent;
+    border:0;
+    outline:0;
+    color:white;
+    font-size:12px;
+}
+
+#sortSelect{
+    background:#0d0d0d;
+    color:#777;
+    border:1px solid var(--border);
+    border-radius:9px;
+    padding:0 14px;
+    outline:0;
+}
+
+.products-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:13px;
+}
+
+.product{
+    overflow:hidden;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:11px;
+    transition:.2s;
+}
+
+.product:hover{
+    transform:translateY(-4px);
+    border-color:#333;
+}
+
+.product-image{
+    height:240px;
+    background:linear-gradient(135deg,#151515,#090909);
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+}
+
+.product-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.placeholder{
+    color:#333;
+    font-size:10px;
+    letter-spacing:1px;
+}
+
+.badge{
+    position:absolute;
+    top:10px;
+    left:10px;
+    padding:5px 8px;
+    border-radius:5px;
+    background:#fff;
+    color:#000;
+    font-size:8px;
+    font-weight:bold;
+}
+
+.fav{
+    position:absolute;
+    right:10px;
+    top:10px;
+    width:31px;
+    height:31px;
+    border-radius:50%;
+    background:rgba(0,0,0,.7);
+    border:1px solid #333;
+    color:#fff;
+}
+
+.fav.active{
+    background:#fff;
+    color:#000;
+}
+
+.product-info{
+    padding:15px;
+}
+
+.product-category{
+    color:#555;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    font-size:8px;
+    margin-bottom:7px;
+}
+
+.product-name{
+    font-size:13px;
+    font-weight:bold;
+    line-height:1.3;
+}
+
+.product-bottom{
+    margin-top:16px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:7px;
+}
+
+.product-price{
+    color:#888;
+    font-size:11px;
+}
+
+.product-actions{
+    display:flex;
+    gap:5px;
+}
+
+.view-btn,
+.order-btn{
+    border-radius:7px;
+    padding:8px 10px;
+    font-size:8px;
+}
+
+.view-btn{
+    background:#151515;
+    color:#fff;
+    border:1px solid #292929;
+}
+
+.order-btn{
+    background:#fff;
+    color:#000;
+    border:1px solid #fff;
+    font-weight:bold;
+}
+
+.view-btn:hover{
+    background:#fff;
+    color:#000;
+}
+
+.order-btn:hover{
+    opacity:.85;
+}
+
+.empty{
+    grid-column:1/-1;
+    padding:60px;
+    text-align:center;
+    color:#555;
+    border:1px dashed #222;
+    border-radius:10px;
+}
+
+.cta{
+    max-width:1080px;
+    margin:60px auto 90px;
+    padding:50px;
+    border:1px solid var(--border);
+    border-radius:15px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+    background:radial-gradient(circle at right,#171717,#090909 50%);
+}
+
+.cta small{
+    color:#555;
+    font-size:9px;
+    letter-spacing:2px;
+}
+
+.cta h2{
+    margin:12px 0;
+    font-size:35px;
+    line-height:1;
+}
+
+.cta p{
+    color:#666;
+    font-size:11px;
+}
+
+footer{
+    border-top:1px solid var(--border);
+    padding:30px 6%;
+    display:flex;
+    justify-content:space-between;
+    color:#444;
+    font-size:10px;
+}
+
+.footer-logo{
+    color:white;
+    font-weight:900;
+}
+
+.footer-logo span{
+    color:#555;
+}
+
+
+/* =========================
+   MODALS
+========================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+    z-index:5000;
+    background:rgba(0,0,0,.82);
+    backdrop-filter:blur(8px);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-box{
+    width:min(650px,100%);
+    max-height:90vh;
+    overflow:auto;
+    background:#0d0d0d;
+    border:1px solid #292929;
+    border-radius:15px;
+    padding:28px;
+    position:relative;
+}
+
+.close{
+    position:absolute;
+    top:12px;
+    right:15px;
+    background:none;
+    border:0;
+    color:#777;
+    font-size:25px;
+}
+
+.close:hover{
+    color:#fff;
+}
+
+.modal-title{
+    font-size:22px;
+    margin-bottom:20px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+}
+
+.form-group.full{
+    grid-column:1/-1;
+}
+
+.form-group label{
+    color:#666;
+    font-size:9px;
+    text-transform:uppercase;
+    letter-spacing:1px;
+}
+
+.form-group input,
+.form-group select{
+    width:100%;
+    padding:12px;
+    border-radius:8px;
+    background:#151515;
+    color:white;
+    border:1px solid #292929;
+    outline:0;
+}
+
+.form-group input:focus,
+.form-group select:focus{
+    border-color:#555;
+}
+
+.form-buttons{
+    display:flex;
+    justify-content:flex-end;
+    gap:8px;
+    margin-top:20px;
+}
+
+.btn{
+    padding:11px 15px;
+    border-radius:8px;
+    border:1px solid #292929;
+    background:#151515;
+    color:#fff;
+    font-size:10px;
+}
+
+.btn.primary{
+    background:#fff;
+    color:#000;
+    border-color:#fff;
+}
+
+.btn.danger{
+    background:#190b0b;
+    color:#ff6b6b;
+}
+
+
+/* =========================
+   CHECKOUT
+========================= */
+
+.checkout-summary{
+    background:#111;
+    border:1px solid #222;
+    border-radius:10px;
+    padding:15px;
+    margin-bottom:20px;
+}
+
+.checkout-summary-title{
+    color:#555;
+    font-size:9px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    margin-bottom:7px;
+}
+
+.checkout-product{
+    font-size:16px;
+    font-weight:bold;
+}
+
+.checkout-price{
+    color:#888;
+    margin-top:5px;
+    font-size:12px;
+}
+
+.checkout-total{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-top:15px;
+    padding-top:15px;
+    border-top:1px solid #222;
+}
+
+.checkout-total span:first-child{
+    color:#666;
+    font-size:10px;
+}
+
+.checkout-total strong{
+    font-size:20px;
+}
+
+.success-box{
+    text-align:center;
+    padding:30px 10px;
+}
+
+.success-icon{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:#fff;
+    color:#000;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 20px;
+    font-size:25px;
+}
+
+.success-box h2{
+    margin-bottom:10px;
+}
+
+.success-box p{
+    color:#666;
+    font-size:11px;
+    line-height:1.7;
+}
+
+
+/* =========================
+   ADMIN
+========================= */
+
+.admin-modal .modal-box{
+    width:min(1050px,100%);
+}
+
+.admin-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.admin-title h2{
+    font-size:25px;
+}
+
+.admin-title p{
+    color:#555;
+    font-size:10px;
+    margin-top:5px;
+}
+
+.admin-actions{
+    display:flex;
+    gap:7px;
+    flex-wrap:wrap;
+}
+
+.admin-stats{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+    margin-bottom:20px;
+}
+
+.admin-stat{
+    background:#121212;
+    border:1px solid var(--border);
+    border-radius:9px;
+    padding:15px;
+}
+
+.admin-stat strong{
+    display:block;
+    font-size:20px;
+}
+
+.admin-stat span{
+    color:#555;
+    font-size:9px;
+}
+
+.admin-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.admin-table th{
+    text-align:left;
+    color:#555;
+    font-size:8px;
+    text-transform:uppercase;
+    padding:10px;
+    border-bottom:1px solid var(--border);
+}
+
+.admin-table td{
+    padding:10px;
+    border-bottom:1px solid #171717;
+    font-size:10px;
+}
+
+.admin-product{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.admin-thumb{
+    width:40px;
+    height:40px;
+    border-radius:7px;
+    background:#171717;
+    object-fit:cover;
+}
+
+.table-actions{
+    display:flex;
+    gap:5px;
+}
+
+.small-btn{
+    padding:6px 8px;
+    border-radius:6px;
+    border:1px solid #292929;
+    background:#151515;
+    color:white;
+    font-size:8px;
+}
+
+.small-btn.delete{
+    color:#ff6b6b;
+}
+
+
+/* =========================
+   TOAST
+========================= */
+
+.toast{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    z-index:10000;
+    background:#fff;
+    color:#000;
+    padding:12px 17px;
+    border-radius:8px;
+    font-size:10px;
+    font-weight:bold;
+    transform:translateY(100px);
+    opacity:0;
+    transition:.25s;
+}
+
+.toast.show{
+    transform:translateY(0);
+    opacity:1;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:900px){
+
+    .products-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .navbar nav{
+        display:none;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .hero{
+        padding:80px 5%;
+    }
+
+    .hero h1{
+        font-size:48px;
+        letter-spacing:-3px;
+    }
+
+    .section{
+        padding-left:5%;
+        padding-right:5%;
+    }
+
+    .products-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:8px;
+    }
+
+    .product-image{
+        height:190px;
+    }
+
+    .search-row{
+        flex-direction:column;
+    }
+
+    #sortSelect{
+        height:45px;
+    }
+
+    .cta{
+        margin:50px 5%;
+        padding:30px;
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .cta h2{
+        font-size:28px;
+    }
+
+    footer{
+        flex-direction:column;
+        gap:15px;
+        text-align:center;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .form-group.full{
+        grid-column:auto;
+    }
+
+    .admin-stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .admin-table th:nth-child(3),
+    .admin-table td:nth-child(3),
+    .admin-table th:nth-child(4),
+    .admin-table td:nth-child(4){
+        display:none;
+    }
+
+    .product-actions{
+        flex-direction:column;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<header class="navbar">
+
+    <a href="#" class="logo">
+        DRIP<span>VAULT</span>
+    </a>
+
+    <nav>
+
+        <a href="#products">
+            Products
+        </a>
+
+        <a href="#categories">
+            Categories
+        </a>
+
+        <a href="#featured">
+            Featured
+        </a>
+
+    </nav>
+
+    <div class="nav-actions">
+
+        <button
+            class="icon-btn"
+            id="favoritesBtn"
+        >
+            ♡
+            <span id="favCount">0</span>
+        </button>
+
+        <button
+            class="login-btn"
+            onclick="showLogin()"
+        >
+            Login
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<main>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="status">
+
+            <span></span>
+
+            PRODUCT SOURCE DIRECTORY
+
+        </div>
+
+
+        <h1>
+
+            FIND THE SOURCE.<br>
+
+            <em>
+                BUILD YOUR STORE.
+            </em>
+
+        </h1>
+
+
+        <p>
+
+            Открий продукти, източници и идеи
+            за твоя онлайн магазин.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a
+                href="#products"
+                class="primary-btn"
+            >
+                Explore Products →
+            </a>
+
+
+            <a
+                href="#categories"
+                class="secondary-btn"
+            >
+                Categories
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     STATS
+========================= -->
+
+<section class="stats">
+
+    <div>
+
+        <strong id="heroProductCount">
+            0+
+        </strong>
+
+        <span>
+            Products
+        </span>
+
+    </div>
+
+
+    <div>
+
+        <strong>
+            8
+        </strong>
+
+        <span>
+            Categories
+        </span>
+
+    </div>
+
+
+    <div>
+
+        <strong>
+            24/7
+        </strong>
+
+        <span>
+            Access
+        </span>
+
+    </div>
+
+
+    <div>
+
+        <strong>
+            NEW
+        </strong>
+
+        <span>
+            Sources
+        </span>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FEATURED
+========================= -->
+
+<section
+    id="featured"
+    class="section"
+>
+
+    <div class="section-header">
+
+        <div>
+
+            <small>
+                HAND PICKED
+            </small>
+
+            <h2>
+                Featured Sources
+            </h2>
+
+        </div>
+
+        <span>
+            Selected products
+        </span>
+
+    </div>
+
+
+    <div
+        id="featuredGrid"
+        class="products-grid"
+    ></div>
+
+</section>
+
+
+<!-- =========================
+     CATEGORIES
+========================= -->
+
+<section
+    id="categories"
+    class="section"
+>
+
+    <div class="section-header">
+
+        <div>
+
+            <small>
+                BROWSE
+            </small>
+
+            <h2>
+                Categories
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div
+        class="categories"
+        id="categoriesBox"
+    ></div>
+
+</section>
+
+
+<!-- =========================
+     PRODUCTS
+========================= -->
+
+<section
+    id="products"
+    class="section"
+>
+
+    <div class="section-header">
+
+        <div>
+
+            <small>
+                CATALOG
+            </small>
+
+            <h2>
+                Product Sources
+            </h2>
+
+        </div>
+
+        <span id="productCount">
+            0 SOURCES
+        </span>
+
+    </div>
+
+
+    <div class="search-row">
+
+        <div class="search">
+
+            <span>
+                ⌕
+            </span>
+
+            <input
+                id="searchInput"
+                type="text"
+                placeholder="Search products..."
+            >
+
+        </div>
+
+
+        <select id="sortSelect">
+
+            <option value="newest">
+                Newest
+            </option>
+
+            <option value="name">
+                Name A-Z
+            </option>
+
+            <option value="price-low">
+                Price Low → High
+            </option>
+
+            <option value="price-high">
+                Price High → Low
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <div
+        id="productsGrid"
+        class="products-grid"
+    ></div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section class="cta">
+
+    <div>
+
+        <small>
+            DRIPVAULT
+        </small>
+
+        <h2>
+            Everything you need.<br>
+            In one place.
+        </h2>
+
+        <p>
+            Product sources organized and ready to explore.
+        </p>
+
+    </div>
+
+
+    <a
+        href="#products"
+        class="primary-btn"
+    >
+        Browse Sources →
+    </a>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-logo">
+
+        DRIP<span>VAULT</span>
+
+    </div>
+
+
+    <p>
+        © 2026 DRIPVAULT
+    </p>
+
+
+    <div>
+        Product Sources • Streetwear • Fashion
+    </div>
+
+</footer>
+
+
+
+<!-- =========================
+     LOGIN MODAL
+========================= -->
+
+<div
+    class="modal"
+    id="loginModal"
+>
+
+    <div class="modal-box">
+
+        <button
+            class="close"
+            onclick="closeLogin()"
+        >
+            ×
+        </button>
+
+
+        <div class="modal-title">
+            Welcome to DRIPVAULT
+        </div>
+
+
+        <p style="
+            color:#666;
+            font-size:11px;
+            line-height:1.7;
+        ">
+
+            Входът ще бъде свързан с онлайн
+            акаунти в следваща версия.
+
+        </p>
+
+
+        <div class="form-buttons">
+
+            <button
+                class="btn primary"
+                onclick="closeLogin()"
+            >
+                Continue
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     PRODUCT MODAL
+========================= -->
+
+<div
+    class="modal"
+    id="productModal"
+>
+
+    <div class="modal-box">
+
+        <button
+            class="close"
+            onclick="closeProduct()"
+        >
+            ×
+        </button>
+
+
+        <div id="productModalContent"></div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     CHECKOUT MODAL
+========================= -->
+
+<div
+    class="modal"
+    id="checkoutModal"
+>
+
+    <div class="modal-box">
+
+        <button
+            class="close"
+            onclick="closeCheckout()"
+        >
+            ×
+        </button>
+
+
+        <div class="modal-title">
+            Checkout
+        </div>
+
+
+        <div
+            class="checkout-summary"
+            id="checkoutSummary"
+        ></div>
+
+
+        <form
+            id="checkoutForm"
+            action="https://formsubmit.co/wwebstav@gmail.com"
+            method="POST"
+        >
+
+            <input
+                type="hidden"
+                name="_subject"
+                value="🛒 Нова DRIPVAULT поръчка"
+            >
+
+            <input
+                type="hidden"
+                name="_captcha"
+                value="false"
+            >
+
+            <input
+                type="hidden"
+                name="_template"
+                value="table"
+            >
+
+            <input
+                type="hidden"
+                name="_next"
+                id="formNext"
+                value=""
+            >
+
+
+            <input
+                type="hidden"
+                name="Product ID"
+                id="checkoutProductId"
+            >
+
+
+            <input
+                type="hidden"
+                name="Продукт"
+                id="checkoutProduct"
+            >
+
+
+            <input
+                type="hidden"
+                name="Цена"
+                id="checkoutPrice"
+            >
+
+
+            <input
+                type="hidden"
+                name="Общо"
+                id="checkoutTotal"
+            >
+
+
+            <div class="form-grid">
+
+
+                <div class="form-group">
+
+                    <label>
+                        Име
+                    </label>
+
+                    <input
+                        type="text"
+                        name="Име"
+                        id="checkoutName"
+                        placeholder="Твоето име"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Имейл
+                    </label>
+
+                    <input
+                        type="email"
+                        name="Имейл"
+                        id="checkoutEmail"
+                        placeholder="you@example.com"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Телефон
+                    </label>
+
+                    <input
+                        type="tel"
+                        name="Телефон"
+                        id="checkoutPhone"
+                        placeholder="+359..."
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Количество
+                    </label>
+
+                    <input
+                        type="number"
+                        name="Количество"
+                        id="checkoutQuantity"
+                        value="1"
+                        min="1"
+                        max="20"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group full">
+
+                    <label>
+                        Адрес
+                    </label>
+
+                    <input
+                        type="text"
+                        name="Адрес"
+                        id="checkoutAddress"
+                        placeholder="Адрес за доставка"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Град
+                    </label>
+
+                    <input
+                        type="text"
+                        name="Град"
+                        id="checkoutCity"
+                        placeholder="Град"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Пощенски код
+                    </label>
+
+                    <input
+                        type="text"
+                        name="Пощенски код"
+                        id="checkoutPostalCode"
+                        placeholder="1000"
+                    >
+
+                </div>
+
+
+                <div class="form-group full">
+
+                    <label>
+                        Допълнителна бележка
+                    </label>
+
+                    <input
+                        type="text"
+                        name="Бележка"
+                        placeholder="Допълнителна информация"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="form-buttons">
+
+                <button
+                    type="button"
+                    class="btn"
+                    onclick="closeCheckout()"
+                >
+                    Отказ
+                </button>
+
+
+                <button
+                    type="submit"
+                    class="btn primary"
+                >
+                    Изпрати поръчката →
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     ORDER SUCCESS
+========================= -->
+
+<div
+    class="modal"
+    id="successModal"
+>
+
+    <div class="modal-box">
+
+        <button
+            class="close"
+            onclick="closeSuccess()"
+        >
+            ×
+        </button>
+
+
+        <div class="success-box">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+
+            <h2>
+                Поръчката е изпратена
+            </h2>
+
+
+            <p>
+                Благодарим ти за поръчката.
+                Ще се свържем с теб при необходимост.
+            </p>
+
+
+            <div
+                id="successOrderId"
+                style="
+                    margin-top:15px;
+                    color:#888;
+                    font-size:11px;
+                "
+            ></div>
+
+
+            <div
+                class="form-buttons"
+                style="justify-content:center"
+            >
+
+                <button
+                    class="btn primary"
+                    onclick="closeSuccess()"
+                >
+                    Готово
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     ADMIN MODAL
+========================= -->
+
+<div
+    class="modal admin-modal"
+    id="adminModal"
+>
+
+    <div class="modal-box">
+
+        <button
+            class="close"
+            onclick="closeAdmin()"
+        >
+            ×
+        </button>
+
+
+        <div class="admin-top">
+
+            <div class="admin-title">
+
+                <h2>
+                    DRIPVAULT ADMIN
+                </h2>
+
+                <p>
+                    Manage your product source directory
+                </p>
+
+            </div>
+
+
+            <div class="admin-actions">
+
+                <button
+                    class="btn primary"
+                    onclick="openProductForm()"
+                >
+                    + Add Product
+                </button>
+
+
+                <button
+                    class="btn"
+                    onclick="exportProducts()"
+                >
+                    Export
+                </button>
+
+
+                <button
+                    class="btn"
+                    onclick="document.getElementById('importFile').click()"
+                >
+                    Import
+                </button>
+
+
+                <input
+                    type="file"
+                    id="importFile"
+                    accept=".json"
+                    hidden
+                    onchange="importProducts(event)"
+                >
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-stats">
+
+            <div class="admin-stat">
+
+                <strong id="adminTotal">
+                    0
+                </strong>
+
+                <span>
+                    PRODUCTS
+                </span>
+
+            </div>
+
+
+            <div class="admin-stat">
+
+                <strong id="adminFeatured">
+                    0
+                </strong>
+
+                <span>
+                    FEATURED
+                </span>
+
+            </div>
+
+
+            <div class="admin-stat">
+
+                <strong id="adminNewest">
+                    0
+                </strong>
+
+                <span>
+                    NEW
+                </span>
+
+            </div>
+
+
+            <div class="admin-stat">
+
+                <strong id="adminCategories">
+                    0
+                </strong>
+
+                <span>
+                    CATEGORIES
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div style="overflow:auto">
+
+            <table class="admin-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Product
+                        </th>
+
+                        <th>
+                            Category
+                        </th>
+
+                        <th>
+                            Price
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                        <th>
+                            Actions
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody
+                    id="adminTableBody"
+                ></tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     PRODUCT FORM
+========================= -->
+
+<div
+    class="modal"
+    id="productFormModal"
+>
+
+    <div class="modal-box">
+
+        <button
+            class="close"
+            onclick="closeProductForm()"
+        >
+            ×
+        </button>
+
+
+        <div
+            class="modal-title"
+            id="formTitle"
+        >
+            Add Product
+        </div>
+
+
+        <input
+            type="hidden"
+            id="editProductId"
+        >
+
+
+        <div class="form-grid">
+
+
+            <div class="form-group">
+
+                <label>
+                    Product Name
+                </label>
+
+                <input
+                    id="productName"
+                    placeholder="Oversized Black Tee"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Price
+                </label>
+
+                <input
+                    id="productPrice"
+                    type="number"
+                    step="0.01"
+                    placeholder="19.99"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Category
+                </label>
+
+                <select
+                    id="productCategory"
+                ></select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Image URL
+                </label>
+
+                <input
+                    id="productImage"
+                    placeholder="https://..."
+                >
+
+            </div>
+
+
+            <div class="form-group full">
+
+                <label>
+                    Direct Product Source URL
+                </label>
+
+                <input
+                    id="productSource"
+                    placeholder="https://supplier.com/product/..."
+                >
+
+            </div>
+
+        </div>
+
+
+        <div class="checks">
+
+            <label>
+                <input
+                    type="checkbox"
+                    id="productFeatured"
+                >
+                Featured
+            </label>
+
+
+            <label>
+                <input
+                    type="checkbox"
+                    id="productNewest"
+                >
+                New
+            </label>
+
+        </div>
+
+
+        <div class="form-buttons">
+
+            <button
+                class="btn"
+                onclick="closeProductForm()"
+            >
+                Cancel
+            </button>
+
+
+            <button
+                class="btn primary"
+                onclick="saveProduct()"
+            >
+                Save Product
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<div
+    class="toast"
+    id="toast"
+>
+    Saved
+</div>
+
+
+
+<script>
+
+/* =========================================================
+   DEFAULT PRODUCTS
+========================================================= */
+
+const defaultProducts = [
+
+    ["Oversized Essential Tee","T-Shirts",12.99,true,true],
+    ["Washed Black Tee","T-Shirts",14.50,true,false],
+    ["Heavy Cotton White Tee","T-Shirts",13.90,false,true],
+    ["Vintage Graphic Tee","T-Shirts",16.90,false,true],
+    ["Boxy Fit Grey Tee","T-Shirts",15.50,true,false],
+    ["Minimal Logo Tee","T-Shirts",11.99,false,false],
+
+    ["Heavyweight Essential Hoodie","Hoodies",29.90,true,true],
+    ["Washed Black Hoodie","Hoodies",31.50,true,false],
+    ["Oversized Grey Hoodie","Hoodies",27.90,false,true],
+    ["Zip Essential Hoodie","Hoodies",30.90,false,false],
+    ["Minimal Embroidery Hoodie","Hoodies",32.90,true,true],
+    ["Heavy Cotton Zip Hoodie","Hoodies",34.90,false,false],
+
+    ["Wide Leg Cargo Pants","Pants",24.90,true,true],
+    ["Relaxed Black Cargo","Pants",26.90,false,false],
+    ["Vintage Washed Jeans","Pants",32.90,true,true],
+    ["Loose Fit Denim","Pants",29.90,false,false],
+    ["Utility Cargo Pants","Pants",28.50,false,true],
+    ["Relaxed Sweatpants","Pants",21.90,true,false],
+
+    ["Essential Black Shorts","Pants",15.90,false,true],
+    ["Heavy Cotton Shorts","Pants",17.90,false,false],
+    ["Relaxed Cargo Shorts","Pants",19.90,true,true],
+
+    ["Classic Street Sneakers","Shoes",39.90,true,true],
+    ["Retro Runner Sneakers","Shoes",42.90,true,false],
+    ["Minimal White Sneakers","Shoes",37.90,false,true],
+    ["Urban Black Sneakers","Shoes",44.90,false,false],
+    ["Classic Low Sneakers","Shoes",34.90,true,false],
+    ["Street Runner","Shoes",41.90,false,true],
+
+    ["Minimal Shoulder Bag","Bags",14.90,true,true],
+    ["Urban Crossbody Bag","Bags",17.90,false,false],
+    ["Utility Shoulder Bag","Bags",19.90,true,true],
+    ["Compact Street Bag","Bags",13.90,false,false],
+    ["Premium Crossbody","Bags",21.90,false,true],
+
+    ["Classic Street Cap","Accessories",9.90,true,true],
+    ["Minimal Baseball Cap","Accessories",10.90,false,false],
+    ["Everyday Beanie","Accessories",8.90,false,true],
+    ["Urban Belt","Accessories",11.90,true,false],
+    ["Minimal Wallet","Accessories",12.90,false,false],
+    ["Street Sunglasses","Accessories",13.90,true,true],
+
+    ["Classic Black Watch","Watches",19.90,true,true],
+    ["Minimal Silver Watch","Watches",22.90,false,false],
+    ["Urban Chronograph","Watches",29.90,true,true],
+    ["Everyday Steel Watch","Watches",24.90,false,false],
+
+    ["Premium Oversized Crewneck","Hoodies",27.90,true,true],
+    ["Vintage Street Jacket","Clothing",39.90,true,false],
+    ["Utility Overshirt","Clothing",31.90,false,true],
+    ["Relaxed Street Jacket","Clothing",42.90,true,true],
+    ["Essential Knit Sweater","Clothing",26.90,false,false],
+    ["Vintage Track Jacket","Clothing",34.90,true,true],
+    ["Oversized Flannel Shirt","Clothing",23.90,false,false],
+    ["Premium Streetwear Set","Clothing",49.90,true,true]
+
+];
+
+
+/* =========================================================
+   PRODUCTS
+========================================================= */
+
+let products =
+    JSON.parse(
+        localStorage.getItem("dripvault_products")
+    ) ||
+    defaultProducts.map((p,index)=>({
+
+        id:index+1,
+
+        name:p[0],
+
+        category:p[1],
+
+        price:p[2],
+
+        image:"",
+
+        source:"",
+
+        featured:p[3],
+
+        newest:p[4]
+
+    }));
+
+
+let favorites =
+    JSON.parse(
+        localStorage.getItem("dripvault_favorites")
+    ) || [];
+
+
+let currentCategory = "All";
+
+let searchTerm = "";
+
+let sortType = "newest";
+
+let checkoutProduct = null;
+
+
+/* =========================================================
+   CATEGORIES
+========================================================= */
+
+const categories = [
+
+    "All",
+
+    "T-Shirts",
+
+    "Hoodies",
+
+    "Pants",
+
+    "Shoes",
+
+    "Bags",
+
+    "Accessories",
+
+    "Watches",
+
+    "Clothing"
+
+];
+
+
+/* =========================================================
+   ELEMENTS
+========================================================= */
+
+const productsGrid =
+    document.getElementById(
+        "productsGrid"
+    );
+
+const featuredGrid =
+    document.getElementById(
+        "featuredGrid"
+    );
+
+const categoriesBox =
+    document.getElementById(
+        "categoriesBox"
+    );
+
+const searchInput =
+    document.getElementById(
+        "searchInput"
+    );
+
+const sortSelect =
+    document.getElementById(
+        "sortSelect"
+    );
+
+const productCount =
+    document.getElementById(
+        "productCount"
+    );
+
+const favCount =
+    document.getElementById(
+        "favCount"
+    );
+
+
+/* =========================================================
+   SAVE
+========================================================= */
+
+function saveData(){
+
+    localStorage.setItem(
+        "dripvault_products",
+        JSON.stringify(products)
+    );
+
+    localStorage.setItem(
+        "dripvault_favorites",
+        JSON.stringify(favorites)
+    );
+
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+function toast(message){
+
+    const el =
+        document.getElementById(
+            "toast"
+        );
+
+    el.textContent =
+        message;
+
+    el.classList.add(
+        "show"
+    );
+
+    setTimeout(()=>{
+
+        el.classList.remove(
+            "show"
+        );
+
+    },1800);
+
+}
+
+
+/* =========================================================
+   PRICE
+========================================================= */
+
+function formatPrice(price){
+
+    return "€" +
+        Number(price).toFixed(2);
+
+}
+
+
+/* =========================================================
+   CATEGORIES
+========================================================= */
+
+function renderCategories(){
+
+    categoriesBox.innerHTML =
+        categories.map(category=>`
+
+            <button
+                class="category ${category===currentCategory?"active":""}"
+                onclick="setCategory('${escapeHTML(category)}')"
+            >
+                ${escapeHTML(category)}
+            </button>
+
+        `).join("");
+
+}
+
+
+function setCategory(category){
+
+    currentCategory =
+        category;
+
+    renderCategories();
+
+    renderProducts();
+
+}
+
+
+/* =========================================================
+   PRODUCT CARD
+========================================================= */
+
+function productCard(product){
+
+    const isFavorite =
+        favorites.includes(
+            product.id
+        );
+
+
+    return `
+
+        <article class="product">
+
+            <div
+                class="product-image"
+                onclick="openProduct(${product.id})"
+                style="cursor:pointer"
+            >
+
+                ${
+                    product.image
+                    ?
+                    `<img
+                        src="${escapeHTML(product.image)}"
+                        alt="${escapeHTML(product.name)}"
+                    >`
+                    :
+                    `<div class="placeholder">
+                        PRODUCT IMAGE
+                    </div>`
+                }
+
+
+                ${
+                    product.newest
+                    ?
+                    `<div class="badge">
+                        NEW
+                    </div>`
+                    :
+                    ""
+                }
+
+
+                <button
+                    class="fav ${isFavorite?"active":""}"
+                    onclick="event.stopPropagation();toggleFavorite(${product.id})"
+                >
+                    ${isFavorite?"♥":"♡"}
+                </button>
+
+            </div>
+
+
+            <div class="product-info">
+
+                <div class="product-category">
+
+                    ${escapeHTML(product.category)}
+
+                </div>
+
+
+                <div
+                    class="product-name"
+                    onclick="openProduct(${product.id})"
+                    style="cursor:pointer"
+                >
+
+                    ${escapeHTML(product.name)}
+
+                </div>
+
+
+                <div class="product-bottom">
+
+                    <div class="product-price">
+
+                        ${formatPrice(product.price)}
+
+                    </div>
+
+
+                    <div class="product-actions">
+
+                        <button
+                            class="view-btn"
+                            onclick="openProduct(${product.id})"
+                        >
+                            VIEW
+                        </button>
+
+
+                        <button
+                            class="order-btn"
+                            onclick="openCheckout(${product.id})"
+                        >
+                            BUY
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    `;
+
+}
+
+
+/* =========================================================
+   RENDER PRODUCTS
+========================================================= */
+
+function renderProducts(){
+
+    let filtered =
+        [...products];
+
+
+    if(
+        currentCategory !==
+        "All"
+    ){
+
+        filtered =
+            filtered.filter(
+                p =>
+                    p.category ===
+                    currentCategory
+            );
+
+    }
+
+
+    if(
+        searchTerm.trim()
+    ){
+
+        const term =
+            searchTerm
+                .toLowerCase();
+
+
+        filtered =
+            filtered.filter(
+                p =>
+                    (
+                        p.name +
+                        " " +
+                        p.category
+                    )
+                    .toLowerCase()
+                    .includes(term)
+            );
+
+    }
+
+
+    if(
+        sortType ===
+        "name"
+    ){
+
+        filtered.sort(
+            (a,b)=>
+                a.name.localeCompare(
+                    b.name
+                )
+        );
+
+    }
+
+
+    if(
+        sortType ===
+        "price-low"
+    ){
+
+        filtered.sort(
+            (a,b)=>
+                Number(a.price) -
+                Number(b.price)
+        );
+
+    }
+
+
+    if(
+        sortType ===
+        "price-high"
+    ){
+
+        filtered.sort(
+            (a,b)=>
+                Number(b.price) -
+                Number(a.price)
+        );
+
+    }
+
+
+    if(
+        sortType ===
+        "newest"
+    ){
+
+        filtered.sort(
+            (a,b)=>
+                Number(b.newest) -
+                Number(a.newest)
+        );
+
+    }
+
+
+    productCount.textContent =
+        filtered.length +
+        " SOURCES";
+
+
+    if(!filtered.length){
+
+        productsGrid.innerHTML = `
+
+            <div class="empty">
+
+                No products found.
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    productsGrid.innerHTML =
+        filtered
+            .map(productCard)
+            .join("");
+
+}
+
+
+/* =========================================================
+   FEATURED
+========================================================= */
+
+function renderFeatured(){
+
+    const featured =
+        products
+            .filter(
+                p=>p.featured
+            )
+            .slice(0,4);
+
+
+    if(!featured.length){
+
+        featuredGrid.innerHTML = `
+
+            <div class="empty">
+
+                No featured products.
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    featuredGrid.innerHTML =
+        featured
+            .map(productCard)
+            .join("");
+
+}
+
+
+/* =========================================================
+   SEARCH / SORT
+========================================================= */
+
+searchInput.addEventListener(
+    "input",
+    e=>{
+
+        searchTerm =
+            e.target.value;
+
+        renderProducts();
+
+    }
+);
+
+
+sortSelect.addEventListener(
+    "change",
+    e=>{
+
+        sortType =
+            e.target.value;
+
+        renderProducts();
+
+    }
+);
+
+
+/* =========================================================
+   FAVORITES
+========================================================= */
+
+function toggleFavorite(id){
+
+    if(
+        favorites.includes(id)
+    ){
+
+        favorites =
+            favorites.filter(
+                item=>item!==id
+            );
+
+    }
+    else{
+
+        favorites.push(id);
+
+    }
+
+
+    saveData();
+
+    updateFavoriteCount();
+
+    renderProducts();
+
+    renderFeatured();
+
+}
+
+
+function updateFavoriteCount(){
+
+    favCount.textContent =
+        favorites.length;
+
+}
+
+
+document
+    .getElementById(
+        "favoritesBtn"
+    )
+    .addEventListener(
+        "click",
+        ()=>{
+
+            const favs =
+                products.filter(
+                    p =>
+                        favorites.includes(
+                            p.id
+                        )
+                );
+
+
+            if(!favs.length){
+
+                toast(
+                    "No favorites yet"
+                );
+
+                return;
+
+            }
+
+
+            productsGrid.innerHTML =
+                favs
+                    .map(productCard)
+                    .join("");
+
+
+            productCount.textContent =
+                favs.length +
+                " FAVORITES";
+
+
+            document
+                .getElementById(
+                    "products"
+                )
+                .scrollIntoView({
+                    behavior:"smooth"
+                });
+
+        }
+    );
+
+
+/* =========================================================
+   PRODUCT VIEW
+========================================================= */
+
+function openProduct(id){
+
+    const product =
+        products.find(
+            p=>p.id===id
+        );
+
+
+    if(!product)
+        return;
+
+
+    document.getElementById(
+        "productModalContent"
+    ).innerHTML = `
+
+        <div style="
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:25px;
+        ">
+
+            <div style="
+                height:350px;
+                background:#151515;
+                border-radius:10px;
+                overflow:hidden;
+                display:flex;
+                align-items:center;
+                justify-content:center;
+            ">
+
+                ${
+                    product.image
+                    ?
+                    `<img
+                        src="${escapeHTML(product.image)}"
+                        style="
+                            width:100%;
+                            height:100%;
+                            object-fit:cover
+                        "
+                    >`
+                    :
+                    `<span style="color:#444">
+                        PRODUCT IMAGE
+                    </span>`
+                }
+
+            </div>
+
+
+            <div>
+
+                <div style="
+                    color:#555;
+                    font-size:9px;
+                    letter-spacing:2px;
+                    margin-bottom:10px;
+                ">
+
+                    ${escapeHTML(product.category)}
+
+                </div>
+
+
+                <h2 style="
+                    font-size:28px;
+                    line-height:1.1;
+                    margin-bottom:15px;
+                ">
+
+                    ${escapeHTML(product.name)}
+
+                </h2>
+
+
+                <div style="
+                    color:#888;
+                    font-size:18px;
+                    margin-bottom:20px;
+                ">
+
+                    ${formatPrice(product.price)}
+
+                </div>
+
+
+                <p style="
+                    color:#666;
+                    font-size:11px;
+                    line-height:1.7;
+                    margin-bottom:25px;
+                ">
+
+                    Product source information.
+                    Избери "ПОРЪЧАЙ", за да направиш
+                    поръчка.
+
+                </p>
+
+
+                <div style="
+                    display:flex;
+                    flex-wrap:wrap;
+                    gap:8px;
+                ">
+
+                    ${
+                        product.source
+                        ?
+                        `<a
+                            href="${escapeHTML(product.source)}"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="secondary-btn"
+                        >
+                            OPEN SOURCE →
+                        </a>`
+                        :
+                        ""
+                    }
+
+
+                    <button
+                        class="primary-btn"
+                        onclick="openCheckout(${product.id})"
+                    >
+                        ПОРЪЧАЙ →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    `;
+
+
+    document
+        .getElementById(
+            "productModal"
+        )
+        .classList.add(
+            "show"
+        );
+
+}
+
+
+function closeProduct(){
+
+    document
+        .getElementById(
+            "productModal"
+        )
+        .classList.remove(
+            "show"
+        );
+
+}
+
+
+/* =========================================================
+   CHECKOUT
+========================================================= */
+
+function openCheckout(id){
+
+    const product =
+        products.find(
+            p=>p.id===id
+        );
+
+
+    if(!product)
+        return;
+
+
+    checkoutProduct =
+        product;
+
+
+    document.getElementById(
+        "checkoutProductId"
+    ).value =
+        product.id;
+
+
+    document.getElementById(
+        "checkoutProduct"
+    ).value =
+        product.name;
+
+
+    document.getElementById(
+        "checkoutPrice"
+    ).value =
+        formatPrice(
+            product.price
+        );
+
+
+    document.getElementById(
+        "checkoutQuantity"
+    ).value =
+        1;
+
+
+    updateCheckoutTotal();
+
+
+    document.getElementById(
+        "checkoutSummary"
+    ).innerHTML = `
+
+        <div class="checkout-summary-title">
+
+            PRODUCT
+
+        </div>
+
+
+        <div class="checkout-product">
+
+            ${escapeHTML(product.name)}
+
+        </div>
+
+
+        <div class="checkout-price">
+
+            Цена:
+            ${formatPrice(product.price)}
+
+        </div>
+
+
+        <div class="checkout-total">
+
+            <span>
+                ОБЩО
+            </span>
+
+            <strong
+                id="checkoutTotalDisplay"
+            >
+                ${formatPrice(product.price)}
+            </strong>
+
+        </div>
+
+    `;
+
+
+    document
+        .getElementById(
+            "checkoutModal"
+        )
+        .classList.add(
+            "show"
+        );
+
+}
+
+
+function updateCheckoutTotal(){
+
+    if(!checkoutProduct)
+        return;
+
+
+    let quantity =
+        Number(
+            document.getElementById(
+                "checkoutQuantity"
+            ).value
+        );
+
+
+    if(
+        !quantity ||
+        quantity < 1
+    ){
+
+        quantity = 1;
+
+    }
+
+
+    const total =
+        Number(
+            checkoutProduct.price
+        ) *
+        quantity;
+
+
+    document.getElementById(
+        "checkoutTotal"
+    ).value =
+        formatPrice(total);
+
+
+    const display =
+        document.getElementById(
+            "checkoutTotalDisplay"
+        );
+
+
+    if(display){
+
+        display.textContent =
+            formatPrice(total);
+
+    }
+
+}
+
+
+document
+    .getElementById(
+        "checkoutQuantity"
+    )
+    .addEventListener(
+        "input",
+        updateCheckoutTotal
+    );
+
+
+function closeCheckout(){
+
+    document
+        .getElementById(
+            "checkoutModal"
+        )
+        .classList.remove(
+            "show"
+        );
+
+}
+
+
+/* =========================================================
+   CHECKOUT SUBMIT
+========================================================= */
+
+document
+    .getElementById(
+        "checkoutForm"
+    )
+    .addEventListener(
+        "submit",
+        function(){
+
+            if(!checkoutProduct)
+                return;
+
+
+            updateCheckoutTotal();
+
+
+            /*
+                ВАЖНО:
+                FormSubmit ще изпрати формата към
+                wwebstav@gmail.com
+            */
+
+
+            setTimeout(()=>{
+
+                closeCheckout();
+
+                document
+                    .getElementById(
+                        "successModal"
+                    )
+                    .classList.add(
+                        "show"
+                    );
+
+            },500);
+
+        }
+    );
+
+
+function closeSuccess(){
+
+    document
+        .getElementById(
+            "successModal"
+        )
+        .classList.remove(
+            "show"
+        );
+
+}
+
+
+/* =========================================================
+   LOGIN
+========================================================= */
+
+function showLogin(){
+
+    document
+        .getElementById(
+            "loginModal"
+        )
+        .classList.add(
+            "show"
+        );
+
+}
+
+
+function closeLogin(){
+
+    document
+        .getElementById(
+            "loginModal"
+        )
+        .classList.remove(
+            "show"
+        );
+
+}
+
+
+/* =========================================================
+   ADMIN
+========================================================= */
+
+function openAdmin(){
+
+    document
+        .getElementById(
+            "adminModal"
+        )
+        .classList.add(
+            "show"
+        );
+
+
+    renderAdmin();
+
+}
+
+
+function closeAdmin(){
+
+    document
+        .getElementById(
+            "adminModal"
+        )
+        .classList.remove(
+            "show"
+        );
+
+}
+
+
+function renderAdmin(){
+
+    document.getElementById(
+        "adminTotal"
+    ).textContent =
+        products.length;
+
+
+    document.getElementById(
+        "adminFeatured"
+    ).textContent =
+        products.filter(
+            p=>p.featured
+        ).length;
+
+
+    document.getElementById(
+        "adminNewest"
+    ).textContent =
+        products.filter(
+            p=>p.newest
+        ).length;
+
+
+    document.getElementById(
+        "adminCategories"
+    ).textContent =
+        new Set(
+            products.map(
+                p=>p.category
+            )
+        ).size;
+
+
+    document.getElementById(
+        "adminTableBody"
+    ).innerHTML =
+        products
+            .map(p=>`
+
+                <tr>
+
+                    <td>
+
+                        <div class="admin-product">
+
+                            ${
+                                p.image
+                                ?
+                                `<img
+                                    class="admin-thumb"
+                                    src="${escapeHTML(p.image)}"
+                                >`
+                                :
+                                `<div class="admin-thumb"></div>`
+                            }
+
+                            <span>
+
+                                ${escapeHTML(p.name)}
+
+                            </span>
+
+                        </div>
+
+                    </td>
+
+
+                    <td>
+
+                        ${escapeHTML(p.category)}
+
+                    </td>
+
+
+                    <td>
+
+                        ${formatPrice(p.price)}
+
+                    </td>
+
+
+                    <td>
+
+                        ${p.featured?"⭐ ":""}
+
+                        ${p.newest?"NEW":""}
+
+                    </td>
+
+
+                    <td>
+
+                        <div class="table-actions">
+
+                            <button
+                                class="small-btn"
+                                onclick="editProduct(${p.id})"
+                            >
+                                EDIT
+                            </button>
+
+
+                            <button
+                                class="small-btn delete"
+                                onclick="deleteProduct(${p.id})"
+                            >
+                                DELETE
+                            </button>
+
+                        </div>
+
+                    </td>
+
+                </tr>
+
+            `)
+            .join("");
+
+}
+
+
+/* =========================================================
+   PRODUCT FORM
+========================================================= */
+
+function populateCategorySelect(){
+
+    const select =
+        document.getElementById(
+            "productCategory"
+        );
+
+
+    select.innerHTML =
+        categories
+            .filter(
+                c=>c!=="All"
+            )
+            .map(
+                c=>`
+
+                    <option value="${escapeHTML(c)}">
+
+                        ${escapeHTML(c)}
+
+                    </option>
+
+                `
+            )
+            .join("");
+
+}
+
+
+function openProductForm(id=null){
+
+    populateCategorySelect();
+
+
+    document
+        .getElementById(
+            "productFormModal"
+        )
+        .classList.add(
+            "show"
+        );
+
+
+    if(id===null){
+
+        document.getElementById(
+            "formTitle"
+        ).textContent =
+            "Add Product";
+
+
+        document.getElementById(
+            "editProductId"
+        ).value =
+            "";
+
+
+        document.getElementById(
+            "productName"
+        ).value =
+            "";
+
+
+        document.getElementById(
+            "productPrice"
+        ).value =
+            "";
+
+
+        document.getElementById(
+            "productImage"
+        ).value =
+            "";
+
+
+        document.getElementById(
+            "productSource"
+        ).value =
+            "";
+
+
+        document.getElementById(
+            "productFeatured"
+        ).checked =
+            false;
+
+
+        document.getElementById(
+            "productNewest"
+        ).checked =
+            true;
+
+    }
+    else{
+
+        editProduct(
+            id,
+            true
+        );
+
+    }
+
+}
+
+
+function closeProductForm(){
+
+    document
+        .getElementById(
+            "productFormModal"
+        )
+        .classList.remove(
+            "show"
+        );
+
+}
+
+
+function editProduct(
+    id,
+    alreadyOpen=false
+){
+
+    const product =
+        products.find(
+            p=>p.id===id
+        );
+
+
+    if(!product)
+        return;
+
+
+    if(!alreadyOpen){
+
+        populateCategorySelect();
+
+
+        document
+            .getElementById(
+                "productFormModal"
+            )
+            .classList.add(
+                "show"
+            );
+
+    }
+
+
+    document.getElementById(
+        "formTitle"
+    ).textContent =
+        "Edit Product";
+
+
+    document.getElementById(
+        "editProductId"
+    ).value =
+        product.id;
+
+
+    document.getElementById(
+        "productName"
+    ).value =
+        product.name;
+
+
+    document.getElementById(
+        "productPrice"
+    ).value =
+        product.price;
+
+
+    document.getElementById(
+        "productCategory"
+    ).value =
+        product.category;
+
+
+    document.getElementById(
+        "productImage"
+    ).value =
+        product.image ||
+        "";
+
+
+    document.getElementById(
+        "productSource"
+    ).value =
+        product.source ||
+        "";
+
+
+    document.getElementById(
+        "productFeatured"
+    ).checked =
+        !!product.featured;
+
+
+    document.getElementById(
+        "productNewest"
+    ).checked =
+        !!product.newest;
+
+}
+
+
+function saveProduct(){
+
+    const id =
+        document.getElementById(
+            "editProductId"
+        ).value;
+
+
+    const name =
+        document.getElementById(
+            "productName"
+        ).value.trim();
+
+
+    const price =
+        Number(
+            document.getElementById(
+                "productPrice"
+            ).value
+        );
+
+
+    const category =
+        document.getElementById(
+            "productCategory"
+        ).value;
+
+
+    const image =
+        document.getElementById(
+            "productImage"
+        ).value.trim();
+
+
+    const source =
+        document.getElementById(
+            "productSource"
+        ).value.trim();
+
+
+    const featured =
+        document.getElementById(
+            "productFeatured"
+        ).checked;
+
+
+    const newest =
+        document.getElementById(
+            "productNewest"
+        ).checked;
+
+
+    if(!name){
+
+        toast(
+            "Enter product name"
+        );
+
+        return;
+
+    }
+
+
+    if(
+        isNaN(price) ||
+        price < 0
+    ){
+
+        toast(
+            "Enter a valid price"
+        );
+
+        return;
+
+    }
+
+
+    if(id){
+
+        const product =
+            products.find(
+                p=>p.id===Number(id)
+            );
+
+
+        if(product){
+
+            product.name =
+                name;
+
+            product.price =
+                price;
+
+            product.category =
+                category;
+
+            product.image =
+                image;
+
+            product.source =
+                source;
+
+            product.featured =
+                featured;
+
+            product.newest =
+                newest;
+
+        }
+
+
+        toast(
+            "Product updated"
+        );
+
+    }
+    else{
+
+        products.push({
+
+            id:
+                Date.now(),
+
+            name,
+
+            category,
+
+            price,
+
+            image,
+
+            source,
+
+            featured,
+
+            newest
+
+        });
+
+
+        toast(
+            "Product added"
+        );
+
+    }
+
+
+    saveData();
+
+    renderProducts();
+
+    renderFeatured();
+
+    renderAdmin();
+
+    updateHeroCount();
+
+    closeProductForm();
+
+}
+
+
+/* =========================================================
+   DELETE
+========================================================= */
+
+function deleteProduct(id){
+
+    const product =
+        products.find(
+            p=>p.id===id
+        );
+
+
+    if(!product)
+        return;
+
+
+    if(
+        !confirm(
+            `Delete "${product.name}"?`
+        )
+    )
+        return;
+
+
+    products =
+        products.filter(
+            p=>p.id!==id
+        );
+
+
+    favorites =
+        favorites.filter(
+            favoriteId =>
+                products.some(
+                    p=>p.id===favoriteId
+                )
+        );
+
+
+    saveData();
+
+    renderProducts();
+
+    renderFeatured();
+
+    renderAdmin();
+
+    updateHeroCount();
+
+    updateFavoriteCount();
+
+    toast(
+        "Product deleted"
+    );
+
+}
+
+
+/* =========================================================
+   EXPORT
+========================================================= */
+
+function exportProducts(){
+
+    const data =
+        JSON.stringify(
+            products,
+            null,
+            2
+        );
+
+
+    const blob =
+        new Blob(
+            [data],
+            {
+                type:
+                    "application/json"
+            }
+        );
+
+
+    const url =
+        URL.createObjectURL(
+            blob
+        );
+
+
+    const a =
+        document.createElement(
+            "a"
+        );
+
+
+    a.href =
+        url;
+
+
+    a.download =
+        "dripvault-products.json";
+
+
+    a.click();
+
+
+    URL.revokeObjectURL(
+        url
+    );
+
+
+    toast(
+        "Products exported"
+    );
+
+}
+
+
+/* =========================================================
+   IMPORT
+========================================================= */
+
+function importProducts(event){
+
+    const file =
+        event.target.files[0];
+
+
+    if(!file)
+        return;
+
+
+    const reader =
+        new FileReader();
+
+
+    reader.onload =
+        function(){
+
+            try{
+
+                const imported =
+                    JSON.parse(
+                        reader.result
+                    );
+
+
+                if(
+                    !Array.isArray(
+                        imported
+                    )
+                ){
+
+                    throw new Error();
+
+                }
+
+
+                products =
+                    imported;
+
+
+                saveData();
+
+                renderProducts();
+
+                renderFeatured();
+
+                renderAdmin();
+
+                updateHeroCount();
+
+                toast(
+                    "Products imported"
+                );
+
+            }
+            catch{
+
+                toast(
+                    "Invalid JSON file"
+                );
+
+            }
+
+        };
+
+
+    reader.readAsText(
+        file
+    );
+
+}
+
+
+/* =========================================================
+   ADMIN HOTKEY
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if(
+            event.ctrlKey &&
+            event.shiftKey &&
+            event.key.toLowerCase()==="a"
+        ){
+
+            event.preventDefault();
+
+            openAdmin();
+
+        }
+
+
+        if(
+            event.key ===
+            "Escape"
+        ){
+
+            closeAdmin();
+
+            closeLogin();
+
+            closeProduct();
+
+            closeCheckout();
+
+            closeProductForm();
+
+            closeSuccess();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   HERO COUNT
+========================================================= */
+
+function updateHeroCount(){
+
+    document.getElementById(
+        "heroProductCount"
+    ).textContent =
+        products.length +
+        "+";
+
+}
+
+
+/* =========================================================
+   HTML ESCAPE
+========================================================= */
+
+function escapeHTML(value){
+
+    return String(
+        value ?? ""
+    )
+    .replace(
+        /&/g,
+        "&amp;"
+    )
+    .replace(
+        /</g,
+        "&lt;"
+    )
+    .replace(
+        />/g,
+        "&gt;"
+    )
+    .replace(
+        /"/g,
+        "&quot;"
+    )
+    .replace(
+        /'/g,
+        "&#039;"
+    );
+
+}
+
+
+/* =========================================================
+   INIT
+========================================================= */
+
+renderCategories();
+
+renderProducts();
+
+renderFeatured();
+
+updateFavoriteCount();
+
+updateHeroCount();
+
+</script>
+
+
+</body>
+</html>

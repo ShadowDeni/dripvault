@@ -1,1 +1,192 @@
-
+[
+  {
+    "id": 1,
+    "name": "Oversized Essential Tee",
+    "category": "T-Shirts",
+    "price": 12.99,
+    "image": "",
+    "source": "",
+    "featured": true,
+    "newest": true
+  },
+  {
+    "id": 2,
+    "name": "Washed Black Tee",
+    "category": "T-Shirts",
+    "price": 14.50,
+    "image": "",
+    "source": "",
+    "featured": true,
+    "newest": false
+  },
+  {
+    "id": 3,
+    "name": "Heavy Cotton White Tee",
+    "category": "T-Shirts",
+    "price": 13.90,
+    "image": "",
+    "source": "",
+    "featured": false,
+    "newest": true
+  },
+  {
+    "id": 4,
+    "name": "Heavyweight Essential Hoodie",
+    "category": "Hoodies",
+    "price": 29.90,
+    "image": "",
+    "source": "",
+    "featured": true,
+    "newest": true
+  },
+  {
+    "id": 5,
+    "name": "Washed Black Hoodie",
+    "category": "Hoodies",
+    "price": 31.50,
+    "image": "",
+    "source": "",
+    "featured": true,
+    "newest": false
+  },
+  {
+    "id": 6,
+    "name": "Oversized Grey Hoodie",
+    "category": "Hoodies",
+    "price": 27.90,
+    "image": "",
+    "source": "",
+    "featured": false,
+    "newest": true
+  },
+  {
+    "id": 7,
+    "name": "Wide Leg Cargo Pants",
+    "category": "Pants",
+    "price": 24.90,
+    "image": "",
+    "source": "",
+    "featured": true,
+    "newest": true
+  },
+  {
+    "id": 8,
+    "name": "Vintage Washed Jeans",
+    "category": "Pants",
+    "price": 32.90,
+    "image": "",
+    "source": "",
+    "featured": true,
+    "newest": true
+  },
+  {
+    "id": 9,
+    "name": "Classic Street Sneakers",
+    "category": "Shoes",
+    "price": 39.90,
+    "image": "",
+    "source": "",
+    "featured": true,
+    "newest": true
+  },
+  {
+    "id": 10,
+    "name": "Retro Runner Sneakers",
+    "category": "Shoes",
+    "price": 42.90,
+    "image": "",
+    "source": "",
+    "featured": true,
+    "newest": false
+  },
+  {
+    "id": 11,
+    "name": "Minimal Shoulder Bag",
+    "category": "Bags",
+    "price": 14.90,
+    "image": "",
+    "source": "",
+    "featured": true,
+    "newest": true
+  },
+  {
+    "id": 12,
+    "name": "Urban Crossbody Bag",
+    "category": "Bags",
+    "price": 17.90,
+    "image": "",
+    "source": "",
+    "featured": false,
+    "newest": false
+  },
+  {
+    "id": 13,
+    "name": "Classic Street Cap",
+    "category": "Accessories",
+    "price": 9.90,
+    "image": "",
+    "source": "",
+    "featured": true,
+    "newest": true
+  },
+  {
+    "id": 14,
+    "name": "Minimal Baseball Cap",
+    "category": "Accessories",
+    "price": 10.90,
+    "image": "",
+    "source": "",
+    "featured": false,
+    "newest": false
+  },
+  {
+    "id": 15,
+    "name": "Classic Black Watch",
+    "category": "Watches",
+    "price": 19.90,
+    "image": "",
+    "source": "",
+    "featured": true,
+    "newest": true
+  },
+  {
+    "id": 16,
+    "name": "Minimal Silver Watch",
+    "category": "Watches",
+    "price": 22.90,
+    "image": "",
+    "source": "",
+    "featured": false,
+    "newest": false
+  },
+  {
+    "id": 17,
+    "name": "Vintage Street Jacket",
+    "category": "Clothing",
+    "price": 39.90,
+    "image": "",
+    "source": "",
+    "featured": true,
+    "newest": false
+  },
+  {
+    "id": 18,
+    "name": "Relaxed Street Jacket",
+    "category": "Clothing",
+    "price": 42.90,
+    "image": "",
+    "source": "",
+    "featured": true,
+    "newest": true
+  },
+  {
+    "id": 19,
+    "name": "Premium Streetwear Set",
+    "category": "Clothing",
+    "price": 49.90,
+    "image": "",
+    "source": "",
+    "featured": true,
+    "newest": true
+  }
+]

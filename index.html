@@ -3,287 +3,836 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>DRIPVAULT — Product Sources</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
 :root{
- --bg:#070707;--card:#0e0e0e;--border:#242424;
- --text:#fff;--muted:#777;--muted2:#4f4f4f
+    --bg:#070707;
+    --card:#0e0e0e;
+    --border:#242424;
+    --text:#fff;
+    --muted:#777;
 }
-html{scroll-behavior:smooth}
+
+html{
+    scroll-behavior:smooth;
+}
+
 body{
- background:var(--bg);color:var(--text);
- font-family:Arial,Helvetica,sans-serif
+    background:var(--bg);
+    color:white;
+    font-family:Arial,Helvetica,sans-serif;
 }
-button,input,select,textarea{font:inherit}
-button{cursor:pointer}
-a{color:inherit}
+
+button,input,select,textarea{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+}
+
+a{
+    color:inherit;
+}
 
 .navbar{
- position:sticky;top:0;z-index:1000;height:72px;padding:0 6%;
- display:flex;align-items:center;justify-content:space-between;
- background:rgba(7,7,7,.92);backdrop-filter:blur(20px);
- border-bottom:1px solid var(--border)
+    position:sticky;
+    top:0;
+    z-index:1000;
+    height:72px;
+    padding:0 6%;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    background:rgba(7,7,7,.94);
+    backdrop-filter:blur(20px);
+    border-bottom:1px solid var(--border);
 }
-.logo{text-decoration:none;font-size:21px;font-weight:900;letter-spacing:-1px}
-.logo span{color:#555}
-.navbar nav{display:flex;gap:28px}
-.navbar nav a{text-decoration:none;color:#777;font-size:12px}
-.navbar nav a:hover{color:#fff}
-.nav-actions{display:flex;gap:7px}
-.icon-btn,.login-btn{padding:10px 14px;border-radius:8px}
-.icon-btn{background:#0e0e0e;color:#fff;border:1px solid var(--border)}
-.login-btn{background:#fff;color:#000;border:1px solid #fff;font-weight:bold}
 
-.hero{max-width:1200px;margin:auto;padding:120px 6% 100px}
-.hero-content{max-width:850px}
+.logo{
+    text-decoration:none;
+    font-size:21px;
+    font-weight:900;
+    letter-spacing:-1px;
+}
+
+.logo span{
+    color:#555;
+}
+
+.navbar nav{
+    display:flex;
+    gap:28px;
+}
+
+.navbar nav a{
+    text-decoration:none;
+    color:#777;
+    font-size:12px;
+}
+
+.navbar nav a:hover{
+    color:white;
+}
+
+.nav-actions{
+    display:flex;
+    gap:7px;
+}
+
+.icon-btn,
+.login-btn{
+    padding:10px 14px;
+    border-radius:8px;
+}
+
+.icon-btn{
+    background:#0e0e0e;
+    color:white;
+    border:1px solid var(--border);
+}
+
+.login-btn{
+    background:white;
+    color:black;
+    border:1px solid white;
+    font-weight:bold;
+}
+
+.hero{
+    max-width:1200px;
+    margin:auto;
+    padding:120px 6% 100px;
+}
+
+.hero-content{
+    max-width:850px;
+}
+
 .status{
- display:inline-flex;align-items:center;gap:8px;padding:8px 12px;
- border:1px solid var(--border);background:#0d0d0d;color:#777;
- border-radius:50px;font-size:9px;margin-bottom:25px
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:8px 12px;
+    border:1px solid var(--border);
+    background:#0d0d0d;
+    color:#777;
+    border-radius:50px;
+    font-size:9px;
+    margin-bottom:25px;
 }
-.status span{width:6px;height:6px;border-radius:50%;background:#777}
-.hero h1{font-size:clamp(48px,8vw,90px);line-height:.9;letter-spacing:-6px}
-.hero h1 em{color:#444;font-style:normal}
-.hero p{margin-top:25px;max-width:550px;color:#777;line-height:1.7;font-size:14px}
-.hero-buttons{display:flex;gap:10px;margin-top:30px}
-.primary-btn,.secondary-btn{
- display:inline-block;padding:13px 18px;border-radius:8px;
- text-decoration:none;font-size:11px;font-weight:bold
+
+.status span{
+    width:6px;
+    height:6px;
+    border-radius:50%;
+    background:#777;
 }
-.primary-btn{background:#fff;color:#000}
-.secondary-btn{background:#111;color:#fff;border:1px solid var(--border)}
+
+.hero h1{
+    font-size:clamp(48px,8vw,90px);
+    line-height:.9;
+    letter-spacing:-6px;
+}
+
+.hero h1 em{
+    color:#444;
+    font-style:normal;
+}
+
+.hero p{
+    margin-top:25px;
+    max-width:550px;
+    color:#777;
+    line-height:1.7;
+    font-size:14px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:10px;
+    margin-top:30px;
+}
+
+.primary-btn,
+.secondary-btn{
+    display:inline-block;
+    padding:13px 18px;
+    border-radius:8px;
+    text-decoration:none;
+    font-size:11px;
+    font-weight:bold;
+}
+
+.primary-btn{
+    background:white;
+    color:black;
+}
+
+.secondary-btn{
+    background:#111;
+    color:white;
+    border:1px solid var(--border);
+}
 
 .stats{
- max-width:1200px;margin:auto;padding:0 6% 70px;
- display:grid;grid-template-columns:repeat(4,1fr);gap:10px
+    max-width:1200px;
+    margin:auto;
+    padding:0 6% 70px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
 }
+
 .stats div{
- background:#0b0b0b;border:1px solid var(--border);
- border-radius:10px;padding:22px
+    background:#0b0b0b;
+    border:1px solid var(--border);
+    border-radius:10px;
+    padding:22px;
 }
-.stats strong{display:block;font-size:22px;margin-bottom:5px}
-.stats span{color:#555;font-size:10px}
 
-.section{max-width:1200px;margin:auto;padding:55px 6%}
+.stats strong{
+    display:block;
+    font-size:22px;
+    margin-bottom:5px;
+}
+
+.stats span{
+    color:#555;
+    font-size:10px;
+}
+
+.section{
+    max-width:1200px;
+    margin:auto;
+    padding:55px 6%;
+}
+
 .section-header{
- display:flex;justify-content:space-between;align-items:end;margin-bottom:25px
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+    margin-bottom:25px;
 }
-.section-header small{color:#555;font-size:9px;letter-spacing:2px}
-.section-header h2{margin-top:5px;font-size:28px}
-.section-header>span{color:#555;font-size:10px}
 
-.categories{display:flex;flex-wrap:wrap;gap:8px}
+.section-header small{
+    color:#555;
+    font-size:9px;
+    letter-spacing:2px;
+}
+
+.section-header h2{
+    margin-top:5px;
+    font-size:28px;
+}
+
+.section-header>span{
+    color:#555;
+    font-size:10px;
+}
+
+.categories{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+}
+
 .category{
- padding:10px 15px;background:#0d0d0d;color:#666;
- border:1px solid var(--border);border-radius:8px;font-size:10px
+    padding:10px 15px;
+    background:#0d0d0d;
+    color:#666;
+    border:1px solid var(--border);
+    border-radius:8px;
+    font-size:10px;
 }
-.category:hover,.category.active{background:#fff;color:#000;border-color:#fff}
 
-.search-row{display:flex;gap:10px;margin-bottom:25px}
+.category:hover,
+.category.active{
+    background:white;
+    color:black;
+    border-color:white;
+}
+
+.search-row{
+    display:flex;
+    gap:10px;
+    margin-bottom:25px;
+}
+
 .search{
- flex:1;display:flex;align-items:center;gap:10px;
- background:#0d0d0d;border:1px solid var(--border);
- border-radius:9px;padding:0 14px
+    flex:1;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    background:#0d0d0d;
+    border:1px solid var(--border);
+    border-radius:9px;
+    padding:0 14px;
 }
-.search span{color:#555;font-size:20px}
+
+.search span{
+    color:#555;
+    font-size:20px;
+}
+
 .search input{
- width:100%;padding:14px 0;background:transparent;border:0;
- outline:0;color:white;font-size:12px
+    width:100%;
+    padding:14px 0;
+    background:transparent;
+    border:0;
+    outline:0;
+    color:white;
+    font-size:12px;
 }
+
 #sortSelect{
- background:#0d0d0d;color:#777;border:1px solid var(--border);
- border-radius:9px;padding:0 14px;outline:0
+    background:#0d0d0d;
+    color:#777;
+    border:1px solid var(--border);
+    border-radius:9px;
+    padding:0 14px;
+    outline:0;
 }
 
 .products-grid{
- display:grid;grid-template-columns:repeat(4,1fr);gap:13px
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:13px;
 }
+
 .product{
- overflow:hidden;background:var(--card);border:1px solid var(--border);
- border-radius:11px;transition:.2s
+    overflow:hidden;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:11px;
+    transition:.2s;
 }
-.product:hover{transform:translateY(-4px);border-color:#3a3a3a}
+
+.product:hover{
+    transform:translateY(-4px);
+    border-color:#3a3a3a;
+}
+
 .product-image{
- height:240px;background:linear-gradient(135deg,#151515,#090909);
- position:relative;display:flex;align-items:center;
- justify-content:center;overflow:hidden
+    height:240px;
+    background:linear-gradient(135deg,#151515,#090909);
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
 }
-.product-image img{width:100%;height:100%;object-fit:cover}
-.placeholder{color:#333;font-size:10px;letter-spacing:1px}
+
+.product-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.placeholder{
+    color:#333;
+    font-size:10px;
+    letter-spacing:1px;
+}
+
 .badge{
- position:absolute;top:10px;left:10px;padding:5px 8px;
- border-radius:5px;background:#fff;color:#000;font-size:8px;font-weight:bold
+    position:absolute;
+    top:10px;
+    left:10px;
+    padding:5px 8px;
+    border-radius:5px;
+    background:white;
+    color:black;
+    font-size:8px;
+    font-weight:bold;
 }
+
 .fav{
- position:absolute;right:10px;top:10px;width:31px;height:31px;
- border-radius:50%;background:rgba(0,0,0,.7);
- border:1px solid #333;color:#fff
+    position:absolute;
+    right:10px;
+    top:10px;
+    width:31px;
+    height:31px;
+    border-radius:50%;
+    background:rgba(0,0,0,.7);
+    border:1px solid #333;
+    color:white;
 }
-.fav.active{background:#fff;color:#000}
-.product-info{padding:15px}
+
+.fav.active{
+    background:white;
+    color:black;
+}
+
+.product-info{
+    padding:15px;
+}
+
 .product-category{
- color:#555;text-transform:uppercase;letter-spacing:1px;
- font-size:8px;margin-bottom:7px
+    color:#555;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    font-size:8px;
+    margin-bottom:7px;
 }
-.product-name{font-size:13px;font-weight:bold;line-height:1.3}
+
+.product-name{
+    font-size:13px;
+    font-weight:bold;
+    line-height:1.3;
+}
+
 .product-bottom{
- margin-top:16px;display:flex;justify-content:space-between;align-items:center
+    margin-top:16px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 }
-.product-price{color:#888;font-size:11px}
+
+.product-price{
+    color:#888;
+    font-size:11px;
+}
+
 .view-btn{
- background:#151515;color:#fff;border:1px solid #292929;
- border-radius:7px;padding:8px 10px;font-size:8px
+    background:#151515;
+    color:white;
+    border:1px solid #292929;
+    border-radius:7px;
+    padding:8px 10px;
+    font-size:8px;
 }
-.view-btn:hover{background:#fff;color:#000}
+
 .empty{
- grid-column:1/-1;padding:60px;text-align:center;color:#555;
- border:1px dashed #222;border-radius:10px
+    grid-column:1/-1;
+    padding:60px;
+    text-align:center;
+    color:#555;
+    border:1px dashed #222;
+    border-radius:10px;
 }
 
 .cta{
- max-width:1080px;margin:60px auto 90px;padding:50px;
- border:1px solid var(--border);border-radius:15px;
- display:flex;align-items:center;justify-content:space-between;
- gap:30px;background:radial-gradient(circle at right,#171717,#090909 50%)
+    max-width:1080px;
+    margin:60px auto 90px;
+    padding:50px;
+    border:1px solid var(--border);
+    border-radius:15px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+    background:radial-gradient(circle at right,#171717,#090909 50%);
 }
-.cta small{color:#555;font-size:9px;letter-spacing:2px}
-.cta h2{margin:12px 0;font-size:35px;line-height:1}
-.cta p{color:#666;font-size:11px}
+
+.cta small{
+    color:#555;
+    font-size:9px;
+    letter-spacing:2px;
+}
+
+.cta h2{
+    margin:12px 0;
+    font-size:35px;
+    line-height:1;
+}
+
+.cta p{
+    color:#666;
+    font-size:11px;
+}
 
 footer{
- border-top:1px solid var(--border);padding:30px 6%;
- display:flex;justify-content:space-between;color:#444;font-size:10px
+    border-top:1px solid var(--border);
+    padding:30px 6%;
+    display:flex;
+    justify-content:space-between;
+    color:#444;
+    font-size:10px;
 }
-.footer-logo{color:#fff;font-weight:900}
-.footer-logo span{color:#555}
+
+.footer-logo{
+    color:white;
+    font-weight:900;
+}
+
+.footer-logo span{
+    color:#555;
+}
 
 .modal{
- position:fixed;inset:0;z-index:5000;background:rgba(0,0,0,.82);
- backdrop-filter:blur(8px);display:none;align-items:center;
- justify-content:center;padding:20px
+    position:fixed;
+    inset:0;
+    z-index:5000;
+    background:rgba(0,0,0,.82);
+    backdrop-filter:blur(8px);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:20px;
 }
-.modal.show{display:flex}
+
+.modal.show{
+    display:flex;
+}
+
 .modal-box{
- width:min(650px,100%);max-height:90vh;overflow:auto;
- background:#0d0d0d;border:1px solid #292929;border-radius:15px;
- padding:28px;position:relative
+    width:min(650px,100%);
+    max-height:90vh;
+    overflow:auto;
+    background:#0d0d0d;
+    border:1px solid #292929;
+    border-radius:15px;
+    padding:28px;
+    position:relative;
 }
+
 .close{
- position:absolute;top:12px;right:15px;background:none;border:0;
- color:#777;font-size:25px
+    position:absolute;
+    top:12px;
+    right:15px;
+    background:none;
+    border:0;
+    color:#777;
+    font-size:25px;
 }
-.modal-title{font-size:22px;margin-bottom:20px}
 
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.form-group{display:flex;flex-direction:column;gap:7px}
-.form-group.full{grid-column:1/-1}
+.modal-title{
+    font-size:22px;
+    margin-bottom:20px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+}
+
+.form-group.full{
+    grid-column:1/-1;
+}
+
 .form-group label{
- color:#666;font-size:9px;text-transform:uppercase;letter-spacing:1px
+    color:#666;
+    font-size:9px;
+    text-transform:uppercase;
+    letter-spacing:1px;
 }
-.form-group input,.form-group select,.form-group textarea{
- width:100%;padding:12px;border-radius:8px;background:#151515;
- color:white;border:1px solid #292929;outline:0
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+    width:100%;
+    padding:12px;
+    border-radius:8px;
+    background:#151515;
+    color:white;
+    border:1px solid #292929;
+    outline:0;
 }
-.form-group textarea{min-height:100px;resize:vertical}
+
+.form-group textarea{
+    min-height:100px;
+    resize:vertical;
+}
+
 .form-buttons{
- display:flex;justify-content:flex-end;gap:8px;margin-top:20px
+    display:flex;
+    justify-content:flex-end;
+    gap:8px;
+    margin-top:20px;
 }
+
 .btn{
- padding:11px 15px;border-radius:8px;border:1px solid #292929;
- background:#151515;color:#fff;font-size:10px
+    padding:11px 15px;
+    border-radius:8px;
+    border:1px solid #292929;
+    background:#151515;
+    color:white;
+    font-size:10px;
 }
-.btn.primary{background:#fff;color:#000;border-color:#fff}
-.btn.danger{background:#190b0b;color:#ff6b6b}
 
-.product-modal-grid{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+.btn.primary{
+    background:white;
+    color:black;
+    border-color:white;
+}
+
+.btn.danger{
+    background:#190b0b;
+    color:#ff6b6b;
+}
+
+.product-modal-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
 .product-modal-image{
- height:350px;background:#151515;border-radius:10px;
- overflow:hidden;display:flex;align-items:center;justify-content:center
+    height:350px;
+    background:#151515;
+    border-radius:10px;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
-.product-modal-image img{width:100%;height:100%;object-fit:cover}
 
-.admin-modal .modal-box{width:min(1050px,100%)}
+.product-modal-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.admin-modal .modal-box{
+    width:min(1050px,100%);
+}
+
 .admin-top{
- display:flex;justify-content:space-between;align-items:center;
- gap:15px;margin-bottom:20px
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:15px;
+    margin-bottom:20px;
 }
-.admin-title h2{font-size:25px}
-.admin-title p{color:#555;font-size:10px;margin-top:5px}
-.admin-actions{display:flex;gap:7px;flex-wrap:wrap}
+
+.admin-title h2{
+    font-size:25px;
+}
+
+.admin-title p{
+    color:#555;
+    font-size:10px;
+    margin-top:5px;
+}
+
+.admin-actions{
+    display:flex;
+    gap:7px;
+    flex-wrap:wrap;
+}
+
 .admin-stats{
- display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:20px
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+    margin-bottom:20px;
 }
+
 .admin-stat{
- background:#121212;border:1px solid var(--border);
- border-radius:9px;padding:15px
+    background:#121212;
+    border:1px solid var(--border);
+    border-radius:9px;
+    padding:15px;
 }
-.admin-stat strong{display:block;font-size:20px}
-.admin-stat span{color:#555;font-size:9px}
-.admin-table{width:100%;border-collapse:collapse}
+
+.admin-stat strong{
+    display:block;
+    font-size:20px;
+}
+
+.admin-stat span{
+    color:#555;
+    font-size:9px;
+}
+
+.admin-table{
+    width:100%;
+    border-collapse:collapse;
+}
+
 .admin-table th{
- text-align:left;color:#555;font-size:8px;text-transform:uppercase;
- padding:10px;border-bottom:1px solid var(--border)
+    text-align:left;
+    color:#555;
+    font-size:8px;
+    text-transform:uppercase;
+    padding:10px;
+    border-bottom:1px solid var(--border);
 }
+
 .admin-table td{
- padding:10px;border-bottom:1px solid #171717;font-size:10px
+    padding:10px;
+    border-bottom:1px solid #171717;
+    font-size:10px;
 }
-.admin-product{display:flex;align-items:center;gap:10px}
+
+.admin-product{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
 .admin-thumb{
- width:40px;height:40px;border-radius:7px;background:#171717;object-fit:cover
+    width:40px;
+    height:40px;
+    border-radius:7px;
+    background:#171717;
+    object-fit:cover;
 }
-.table-actions{display:flex;gap:5px}
+
+.table-actions{
+    display:flex;
+    gap:5px;
+}
+
 .small-btn{
- padding:6px 8px;border-radius:6px;border:1px solid #292929;
- background:#151515;color:white;font-size:8px
+    padding:6px 8px;
+    border-radius:6px;
+    border:1px solid #292929;
+    background:#151515;
+    color:white;
+    font-size:8px;
 }
-.small-btn.delete{color:#ff6b6b}
+
+.small-btn.delete{
+    color:#ff6b6b;
+}
 
 .checkout-total{
- margin-top:20px;padding:18px;border:1px solid var(--border);
- border-radius:10px;background:#111;display:flex;
- justify-content:space-between
+    margin-top:20px;
+    padding:18px;
+    border:1px solid var(--border);
+    border-radius:10px;
+    background:#111;
+    display:flex;
+    justify-content:space-between;
 }
-.checkout-total span{color:#666}
-.checkout-total strong{font-size:20px}
+
+.checkout-total span{
+    color:#666;
+}
+
+.checkout-total strong{
+    font-size:20px;
+}
 
 .toast{
- position:fixed;right:20px;bottom:20px;z-index:10000;
- background:#fff;color:#000;padding:12px 17px;border-radius:8px;
- font-size:10px;font-weight:bold;transform:translateY(100px);
- opacity:0;transition:.25s
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    z-index:10000;
+    background:white;
+    color:black;
+    padding:12px 17px;
+    border-radius:8px;
+    font-size:10px;
+    font-weight:bold;
+    transform:translateY(100px);
+    opacity:0;
+    transition:.25s;
 }
-.toast.show{transform:translateY(0);opacity:1}
+
+.toast.show{
+    transform:translateY(0);
+    opacity:1;
+}
 
 .loading{
- grid-column:1/-1;
- padding:60px;
- text-align:center;
- color:#666
+    grid-column:1/-1;
+    padding:60px;
+    text-align:center;
+    color:#555;
 }
 
 @media(max-width:900px){
- .products-grid{grid-template-columns:repeat(3,1fr)}
- .stats{grid-template-columns:repeat(2,1fr)}
- .navbar nav{display:none}
+
+    .products-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .navbar nav{
+        display:none;
+    }
 }
+
 @media(max-width:600px){
- .hero{padding:80px 5%}
- .hero h1{font-size:48px;letter-spacing:-3px}
- .section{padding-left:5%;padding-right:5%}
- .products-grid{grid-template-columns:repeat(2,1fr);gap:8px}
- .product-image{height:190px}
- .search-row{flex-direction:column}
- #sortSelect{height:45px}
- .cta{margin:50px 5%;padding:30px;flex-direction:column;align-items:flex-start}
- .cta h2{font-size:28px}
- footer{flex-direction:column;gap:15px;text-align:center}
- .form-grid{grid-template-columns:1fr}
- .form-group.full{grid-column:auto}
- .admin-stats{grid-template-columns:repeat(2,1fr)}
- .product-modal-grid{grid-template-columns:1fr}
- .product-modal-image{height:250px}
+
+    .hero{
+        padding:80px 5%;
+    }
+
+    .hero h1{
+        font-size:48px;
+        letter-spacing:-3px;
+    }
+
+    .section{
+        padding-left:5%;
+        padding-right:5%;
+    }
+
+    .products-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:8px;
+    }
+
+    .product-image{
+        height:190px;
+    }
+
+    .search-row{
+        flex-direction:column;
+    }
+
+    #sortSelect{
+        height:45px;
+    }
+
+    .cta{
+        margin:50px 5%;
+        padding:30px;
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .cta h2{
+        font-size:28px;
+    }
+
+    footer{
+        flex-direction:column;
+        gap:15px;
+        text-align:center;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .form-group.full{
+        grid-column:auto;
+    }
+
+    .admin-stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .product-modal-grid{
+        grid-template-columns:1fr;
+    }
+
+    .product-modal-image{
+        height:250px;
+    }
 }
 </style>
 </head>
@@ -291,7 +840,10 @@ footer{
 <body>
 
 <header class="navbar">
-<a href="#" class="logo">DRIP<span>VAULT</span></a>
+
+<a href="#" class="logo">
+DRIP<span>VAULT</span>
+</a>
 
 <nav>
 <a href="#products">Products</a>
@@ -300,17 +852,33 @@ footer{
 </nav>
 
 <div class="nav-actions">
-<button class="icon-btn" id="favoritesBtn">♡ <span id="favCount">0</span></button>
-<button class="icon-btn" onclick="openCart()">🛒 <span id="cartCount">0</span></button>
-<button class="login-btn" onclick="showLogin()">Login</button>
+
+<button class="icon-btn" id="favoritesBtn">
+♡ <span id="favCount">0</span>
+</button>
+
+<button class="icon-btn" onclick="openCart()">
+🛒 <span id="cartCount">0</span>
+</button>
+
+<button class="login-btn" onclick="showLogin()">
+Login
+</button>
+
 </div>
+
 </header>
 
 <main>
 
 <section class="hero">
+
 <div class="hero-content">
-<div class="status"><span></span>PRODUCT SOURCE DIRECTORY</div>
+
+<div class="status">
+<span></span>
+PRODUCT SOURCE DIRECTORY
+</div>
 
 <h1>
 FIND THE SOURCE.<br>
@@ -323,151 +891,263 @@ footwear and accessories.
 </p>
 
 <div class="hero-buttons">
-<a href="#products" class="primary-btn">Explore Products →</a>
-<a href="#categories" class="secondary-btn">Categories</a>
+
+<a href="#products" class="primary-btn">
+Explore Products →
+</a>
+
+<a href="#categories" class="secondary-btn">
+Categories
+</a>
+
 </div>
+
 </div>
+
 </section>
 
 <section class="stats">
-<div><strong id="heroProductCount">0</strong><span>Products</span></div>
-<div><strong>8</strong><span>Categories</span></div>
-<div><strong>24/7</strong><span>Access</span></div>
-<div><strong>NEW</strong><span>Sources</span></div>
+
+<div>
+<strong id="heroProductCount">0</strong>
+<span>Products</span>
+</div>
+
+<div>
+<strong>8+</strong>
+<span>Categories</span>
+</div>
+
+<div>
+<strong>24/7</strong>
+<span>Access</span>
+</div>
+
+<div>
+<strong>LIVE</strong>
+<span>Sources</span>
+</div>
+
 </section>
 
 <section id="featured" class="section">
+
 <div class="section-header">
+
 <div>
 <small>HAND PICKED</small>
 <h2>Featured Sources</h2>
 </div>
+
 <span>Selected products</span>
+
 </div>
 
-<div id="featuredGrid" class="products-grid">
-<div class="loading">Loading products...</div>
-</div>
+<div id="featuredGrid" class="products-grid"></div>
+
 </section>
 
 <section id="categories" class="section">
+
 <div class="section-header">
+
 <div>
 <small>BROWSE</small>
 <h2>Categories</h2>
 </div>
+
 </div>
 
 <div class="categories" id="categoriesBox"></div>
+
 </section>
 
 <section id="products" class="section">
+
 <div class="section-header">
+
 <div>
 <small>CATALOG</small>
 <h2>Product Sources</h2>
 </div>
 
 <span id="productCount">0 SOURCES</span>
+
 </div>
 
 <div class="search-row">
+
 <div class="search">
+
 <span>⌕</span>
-<input id="searchInput" type="text" placeholder="Search products...">
+
+<input
+id="searchInput"
+type="text"
+placeholder="Search products..."
+>
+
 </div>
 
 <select id="sortSelect">
+
 <option value="newest">Newest</option>
 <option value="name">Name A-Z</option>
 <option value="price-low">Price Low → High</option>
 <option value="price-high">Price High → Low</option>
+
 </select>
+
 </div>
 
 <div id="productsGrid" class="products-grid">
-<div class="loading">Loading products...</div>
+
+<div class="loading">
+Loading products...
 </div>
+
+</div>
+
 </section>
 
 <section class="cta">
+
 <div>
+
 <small>DRIPVAULT</small>
-<h2>Everything you need.<br>In one place.</h2>
-<p>Product sources organized and ready to explore.</p>
+
+<h2>
+Everything you need.<br>
+In one place.
+</h2>
+
+<p>
+Product sources organized and ready to explore.
+</p>
+
 </div>
 
-<a href="#products" class="primary-btn">Browse Sources →</a>
+<a href="#products" class="primary-btn">
+Browse Sources →
+</a>
+
 </section>
 
 </main>
 
 <footer>
-<div class="footer-logo">DRIP<span>VAULT</span></div>
-<p>© 2026 DRIPVAULT</p>
-<div>Product Sources • Streetwear • Fashion</div>
+
+<div class="footer-logo">
+DRIP<span>VAULT</span>
+</div>
+
+<p>
+© 2026 DRIPVAULT
+</p>
+
+<div>
+Product Sources • Streetwear • Fashion
+</div>
+
 </footer>
 
 
 <!-- LOGIN -->
 
 <div class="modal" id="loginModal">
+
 <div class="modal-box">
+
 <button class="close" onclick="closeLogin()">×</button>
 
-<div class="modal-title">Welcome to DRIPVAULT</div>
+<div class="modal-title">
+Welcome to DRIPVAULT
+</div>
 
 <p style="color:#666;font-size:11px;line-height:1.7">
 Browse products and use Checkout to send your order.
 </p>
 
 <div class="form-buttons">
-<button class="btn primary" onclick="closeLogin()">Continue</button>
+
+<button class="btn primary" onclick="closeLogin()">
+Continue
+</button>
+
 </div>
+
 </div>
+
 </div>
 
 
 <!-- PRODUCT -->
 
 <div class="modal" id="productModal">
+
 <div class="modal-box">
+
 <button class="close" onclick="closeProduct()">×</button>
+
 <div id="productModalContent"></div>
+
 </div>
+
 </div>
 
 
 <!-- CART -->
 
 <div class="modal" id="cartModal">
+
 <div class="modal-box">
+
 <button class="close" onclick="closeCart()">×</button>
 
-<div class="modal-title">Your Cart</div>
+<div class="modal-title">
+Your Cart
+</div>
 
 <div id="cartItems"></div>
 
 <div class="checkout-total">
+
 <span>Total</span>
-<strong id="cartTotal">€0.00</strong>
+
+<strong id="cartTotal">
+€0.00
+</strong>
+
 </div>
 
 <div class="form-buttons">
-<button class="btn" onclick="closeCart()">Continue Shopping</button>
-<button class="btn primary" onclick="openCheckout()">Checkout →</button>
+
+<button class="btn" onclick="closeCart()">
+Continue Shopping
+</button>
+
+<button class="btn primary" onclick="openCheckout()">
+Checkout →
+</button>
+
 </div>
+
 </div>
+
 </div>
 
 
 <!-- CHECKOUT -->
 
 <div class="modal" id="checkoutModal">
+
 <div class="modal-box">
+
 <button class="close" onclick="closeCheckout()">×</button>
 
-<div class="modal-title">Checkout</div>
+<div class="modal-title">
+Checkout
+</div>
 
 <p style="color:#666;font-size:11px;line-height:1.7;margin-bottom:20px">
 Enter your details. Your order will be sent to our order email.
@@ -479,74 +1159,143 @@ action="https://formsubmit.co/yuseinovdenis2@gmail.com"
 method="POST"
 >
 
-<input type="hidden" name="_subject" value="Нова DRIPVAULT поръчка">
-<input type="hidden" name="_template" value="table">
-<input type="hidden" name="_captcha" value="false">
+<input type="hidden"
+name="_subject"
+value="Нова DRIPVAULT поръчка">
 
-<input type="hidden" name="Order" id="orderField">
-<input type="hidden" name="Total" id="totalField">
+<input type="hidden"
+name="_template"
+value="table">
+
+<input type="hidden"
+name="_captcha"
+value="false">
+
+<input type="hidden"
+name="Order"
+id="orderField">
+
+<input type="hidden"
+name="Total"
+id="totalField">
 
 <div class="form-grid">
 
 <div class="form-group">
+
 <label>Име</label>
-<input type="text" name="Name" placeholder="Твоето име" required>
+
+<input
+type="text"
+name="Name"
+placeholder="Твоето име"
+required
+>
+
 </div>
 
 <div class="form-group">
+
 <label>Имейл</label>
-<input type="email" name="Email" placeholder="your@email.com" required>
+
+<input
+type="email"
+name="Email"
+placeholder="your@email.com"
+required
+>
+
 </div>
 
 <div class="form-group full">
+
 <label>Допълнителна информация</label>
+
 <textarea
 name="Message"
-placeholder="Допълнителна информация за поръчката..."
+placeholder="Допълнителна информация..."
 ></textarea>
+
 </div>
 
 </div>
 
 <div class="checkout-total">
+
 <span>Общо</span>
-<strong id="checkoutTotal">€0.00</strong>
+
+<strong id="checkoutTotal">
+€0.00
+</strong>
+
 </div>
 
 <div class="form-buttons">
-<button type="button" class="btn" onclick="closeCheckout()">Отказ</button>
-<button type="submit" class="btn primary">Изпрати поръчката →</button>
+
+<button
+type="button"
+class="btn"
+onclick="closeCheckout()"
+>
+Отказ
+</button>
+
+<button
+type="submit"
+class="btn primary"
+>
+Изпрати поръчката →
+</button>
+
 </div>
 
 </form>
+
 </div>
+
 </div>
 
 
 <!-- ADMIN -->
 
 <div class="modal admin-modal" id="adminModal">
+
 <div class="modal-box">
 
 <button class="close" onclick="closeAdmin()">×</button>
 
 <div class="admin-top">
+
 <div class="admin-title">
+
 <h2>DRIPVAULT ADMIN</h2>
-<p>Manage your product source directory</p>
+
+<p>
+Manage your product source directory
+</p>
+
 </div>
 
 <div class="admin-actions">
 
-<button class="btn primary" onclick="openProductForm()">
+<button
+class="btn primary"
+onclick="openProductForm()"
+>
 + Add Product
 </button>
 
-<button class="btn" onclick="exportProducts()">
+<button
+class="btn"
+onclick="exportProducts()"
+>
 Export
 </button>
 
-<button class="btn" onclick="document.getElementById('importFile').click()">
+<button
+class="btn"
+onclick="document.getElementById('importFile').click()"
+>
 Import
 </button>
 
@@ -559,6 +1308,7 @@ onchange="importProducts(event)"
 >
 
 </div>
+
 </div>
 
 <div class="admin-stats">
@@ -586,9 +1336,11 @@ onchange="importProducts(event)"
 </div>
 
 <div style="overflow:auto">
+
 <table class="admin-table">
 
 <thead>
+
 <tr>
 <th>Product</th>
 <th>Category</th>
@@ -596,53 +1348,88 @@ onchange="importProducts(event)"
 <th>Status</th>
 <th>Actions</th>
 </tr>
+
 </thead>
 
 <tbody id="adminTableBody"></tbody>
 
 </table>
+
 </div>
 
 </div>
+
 </div>
 
 
 <!-- PRODUCT FORM -->
 
 <div class="modal" id="productFormModal">
+
 <div class="modal-box">
 
 <button class="close" onclick="closeProductForm()">×</button>
 
-<div class="modal-title" id="formTitle">Add Product</div>
+<div class="modal-title" id="formTitle">
+Add Product
+</div>
 
 <input type="hidden" id="editProductId">
 
 <div class="form-grid">
 
 <div class="form-group">
+
 <label>Product Name</label>
-<input id="productName" placeholder="Oversized Black Tee">
+
+<input
+id="productName"
+placeholder="Oversized Black Tee"
+>
+
 </div>
 
 <div class="form-group">
+
 <label>Price</label>
-<input id="productPrice" type="number" step="0.01" placeholder="19.99">
+
+<input
+id="productPrice"
+type="number"
+step="0.01"
+placeholder="19.99"
+>
+
 </div>
 
 <div class="form-group">
+
 <label>Category</label>
+
 <select id="productCategory"></select>
+
 </div>
 
 <div class="form-group">
+
 <label>Image URL</label>
-<input id="productImage" placeholder="https://...">
+
+<input
+id="productImage"
+placeholder="https://..."
+>
+
 </div>
 
 <div class="form-group full">
+
 <label>Direct Product Source URL</label>
-<input id="productSource" placeholder="https://supplier.com/product/...">
+
+<input
+id="productSource"
+placeholder="https://supplier.com/product/..."
+>
+
 </div>
 
 </div>
@@ -650,130 +1437,103 @@ onchange="importProducts(event)"
 <div style="display:flex;gap:20px;margin-top:15px">
 
 <label style="color:#888;font-size:11px">
-<input type="checkbox" id="productFeatured">
+
+<input
+type="checkbox"
+id="productFeatured"
+>
+
 Featured
+
 </label>
 
 <label style="color:#888;font-size:11px">
-<input type="checkbox" id="productNewest">
+
+<input
+type="checkbox"
+id="productNewest"
+>
+
 New
+
 </label>
 
 </div>
 
 <div class="form-buttons">
 
-<button class="btn" onclick="closeProductForm()">Cancel</button>
+<button
+class="btn"
+onclick="closeProductForm()"
+>
+Cancel
+</button>
 
-<button class="btn primary" onclick="saveProduct()">
+<button
+class="btn primary"
+onclick="saveProduct()"
+>
 Save Product
 </button>
 
 </div>
 
 </div>
+
 </div>
 
 
-<div class="toast" id="toast">Saved</div>
+<div class="toast" id="toast">
+Saved
+</div>
 
 
 <script>
 
-/* =========================================================
-   CONFIG
-========================================================= */
+/* ==================================================
+   DRIPVAULT CONFIG
+================================================== */
 
 /*
-   ВАЖНО:
+ * СМЕНИ ТОВА С URL-А НА ТВОЯ CLOUDFLARE WORKER.
+ *
+ * Пример:
+ * https://dripvault-api.username.workers.dev
+ */
 
-   products.json трябва да е в същата папка като index.html.
+const API_URL = "https://YOUR-WORKER-NAME.YOUR-SUBDOMAIN.workers.dev";
 
-   Пример:
+/*
+ * ТОВА Е КЛЮЧЪТ ЗА ADMIN API.
+ *
+ * Той трябва да съвпада с Cloudflare Secret:
+ *
+ * ADMIN_API_KEY
+ *
+ * ВАЖНО:
+ * За истинска сигурност admin API key не трябва
+ * да стои в публичен HTML.
+ *
+ * Този вариант е направен за лесно стартиране.
+ *
+ * За production е по-добре да направим
+ * Cloudflare Access / login система.
+ */
 
-   /
-   ├── index.html
-   └── products.json
-
-   Така работи и в GitHub + Cloudflare Pages.
-*/
-
-const PRODUCTS_URL = "./products.json";
-
-
-/* =========================================================
-   DEFAULT PRODUCTS
-========================================================= */
-
-const defaultProducts = [
-["Oversized Essential Tee","T-Shirts",12.99,true,true],
-["Washed Black Tee","T-Shirts",14.50,true,false],
-["Heavy Cotton White Tee","T-Shirts",13.90,false,true],
-["Vintage Graphic Tee","T-Shirts",16.90,false,true],
-["Boxy Fit Grey Tee","T-Shirts",15.50,true,false],
-["Minimal Logo Tee","T-Shirts",11.99,false,false],
-
-["Heavyweight Essential Hoodie","Hoodies",29.90,true,true],
-["Washed Black Hoodie","Hoodies",31.50,true,false],
-["Oversized Grey Hoodie","Hoodies",27.90,false,true],
-["Zip Essential Hoodie","Hoodies",30.90,false,false],
-["Minimal Embroidery Hoodie","Hoodies",32.90,true,true],
-["Heavy Cotton Zip Hoodie","Hoodies",34.90,false,false],
-
-["Wide Leg Cargo Pants","Pants",24.90,true,true],
-["Relaxed Black Cargo","Pants",26.90,false,false],
-["Vintage Washed Jeans","Pants",32.90,true,true],
-["Loose Fit Denim","Pants",29.90,false,false],
-["Utility Cargo Pants","Pants",28.50,false,true],
-["Relaxed Sweatpants","Pants",21.90,true,false],
-
-["Classic Street Sneakers","Shoes",39.90,true,true],
-["Retro Runner Sneakers","Shoes",42.90,true,false],
-["Minimal White Sneakers","Shoes",37.90,false,true],
-["Urban Black Sneakers","Shoes",44.90,false,false],
-["Classic Low Sneakers","Shoes",34.90,true,false],
-["Street Runner","Shoes",41.90,false,true],
-
-["Minimal Shoulder Bag","Bags",14.90,true,true],
-["Urban Crossbody Bag","Bags",17.90,false,false],
-["Utility Shoulder Bag","Bags",19.90,true,true],
-["Compact Street Bag","Bags",13.90,false,false],
-["Premium Crossbody","Bags",21.90,false,true],
-
-["Classic Street Cap","Accessories",9.90,true,true],
-["Minimal Baseball Cap","Accessories",10.90,false,false],
-["Everyday Beanie","Accessories",8.90,false,true],
-["Urban Belt","Accessories",11.90,true,false],
-["Minimal Wallet","Accessories",12.90,false,false],
-["Street Sunglasses","Accessories",13.90,true,true],
-
-["Classic Black Watch","Watches",19.90,true,true],
-["Minimal Silver Watch","Watches",22.90,false,false],
-["Urban Chronograph","Watches",29.90,true,true],
-["Everyday Steel Watch","Watches",24.90,false,false],
-
-["Premium Oversized Crewneck","Hoodies",27.90,true,true],
-["Vintage Street Jacket","Clothing",39.90,true,false],
-["Utility Overshirt","Clothing",31.90,false,true],
-["Relaxed Street Jacket","Clothing",42.90,true,true],
-["Essential Knit Sweater","Clothing",26.90,false,false],
-["Vintage Track Jacket","Clothing",34.90,true,true],
-["Oversized Flannel Shirt","Clothing",23.90,false,false],
-["Premium Streetwear Set","Clothing",49.90,true,true]
-];
+const ADMIN_API_KEY = "CHANGE_THIS_ADMIN_KEY";
 
 
-/* =========================================================
+/* ==================================================
    DATA
-========================================================= */
+================================================== */
 
 let products = [];
 
 let favorites =
-JSON.parse(localStorage.getItem("dripvault_favorites")) || [];
+JSON.parse(localStorage.getItem("dripvault_favorites") || "[]");
 
 let cart =
-JSON.parse(localStorage.getItem("dripvault_cart")) || [];
+JSON.parse(localStorage.getItem("dripvault_cart") || "[]");
 
 let currentCategory = "All";
 let searchTerm = "";
@@ -781,21 +1541,21 @@ let sortType = "newest";
 
 
 const categories = [
-"All",
-"T-Shirts",
-"Hoodies",
-"Pants",
-"Shoes",
-"Bags",
-"Accessories",
-"Watches",
-"Clothing"
+    "All",
+    "T-Shirts",
+    "Hoodies",
+    "Pants",
+    "Shoes",
+    "Bags",
+    "Accessories",
+    "Watches",
+    "Clothing"
 ];
 
 
-/* =========================================================
+/* ==================================================
    ELEMENTS
-========================================================= */
+================================================== */
 
 const productsGrid =
 document.getElementById("productsGrid");
@@ -822,121 +1582,139 @@ const cartCount =
 document.getElementById("cartCount");
 
 
-/* =========================================================
-   LOAD PRODUCTS FROM products.json
-========================================================= */
+/* ==================================================
+   LOCAL STORAGE
+================================================== */
+
+function saveLocalData(){
+
+    localStorage.setItem(
+        "dripvault_favorites",
+        JSON.stringify(favorites)
+    );
+
+    localStorage.setItem(
+        "dripvault_cart",
+        JSON.stringify(cart)
+    );
+
+}
+
+
+/* ==================================================
+   LOAD PRODUCTS FROM CLOUDFLARE
+================================================== */
 
 async function loadProducts(){
 
-    productsGrid.innerHTML =
-    `<div class="loading">Loading products...</div>`;
-
-    featuredGrid.innerHTML =
-    `<div class="loading">Loading products...</div>`;
+    productsGrid.innerHTML = `
+        <div class="loading">
+            Loading products...
+        </div>
+    `;
 
     try{
 
         const response =
-        await fetch(PRODUCTS_URL + "?v=" + Date.now());
+        await fetch(API_URL + "/products", {
+            method:"GET",
+            cache:"no-store"
+        });
 
         if(!response.ok){
-
-            throw new Error(
-                "HTTP " + response.status
-            );
-
+            throw new Error("API error");
         }
 
         const data =
         await response.json();
 
         if(!Array.isArray(data)){
-
-            throw new Error(
-                "products.json must contain an array"
-            );
-
+            throw new Error("Invalid products");
         }
 
-        products =
-        data.map((p,index)=>({
-
-            id:p.id ?? index+1,
-
-            name:p.name ?? "Unnamed Product",
-
-            category:p.category ?? "Clothing",
-
-            price:Number(p.price) || 0,
-
-            image:p.image ?? "",
-
-            source:p.source ?? "",
-
-            featured:Boolean(p.featured),
-
-            newest:Boolean(p.newest)
-
-        }));
-
-        console.log(
-            "DRIPVAULT products loaded:",
-            products.length
-        );
+        products = data;
 
         renderCategories();
         renderProducts();
         renderFeatured();
-
+        renderAdmin();
         updateHeroCount();
         updateFavoriteCount();
         updateCartCount();
 
     }catch(error){
 
-        console.error(
-            "Could not load products.json:",
-            error
-        );
+        console.error(error);
 
-        /*
-          Ако products.json не се намери,
-          показваме default продуктите,
-          за да не остане сайтът празен.
-        */
-
-        products =
-        defaultProducts.map((p,index)=>({
-
-            id:index+1,
-            name:p[0],
-            category:p[1],
-            price:p[2],
-            image:"",
-            source:"",
-            featured:p[3],
-            newest:p[4]
-
-        }));
-
-        renderCategories();
-        renderProducts();
-        renderFeatured();
-
-        updateHeroCount();
-
-        toast(
-            "products.json не беше намерен"
-        );
+        productsGrid.innerHTML = `
+            <div class="empty">
+                <strong>Could not load products.</strong>
+                <br><br>
+                Check your Cloudflare Worker URL.
+            </div>
+        `;
 
     }
 
 }
 
 
-/* =========================================================
+/* ==================================================
+   SAVE PRODUCTS TO GITHUB THROUGH WORKER
+================================================== */
+
+async function saveProductsToServer(){
+
+    try{
+
+        const response =
+        await fetch(API_URL + "/products", {
+
+            method:"PUT",
+
+            headers:{
+                "Content-Type":"application/json",
+                "X-Admin-Key":ADMIN_API_KEY
+            },
+
+            body:JSON.stringify(products)
+
+        });
+
+        const result =
+        await response.json();
+
+        if(!response.ok){
+
+            console.error(result);
+
+            throw new Error(
+                result.error ||
+                "Could not save products"
+            );
+
+        }
+
+        return true;
+
+    }catch(error){
+
+        console.error(error);
+
+        toast(
+            "Неуспешно записване"
+        );
+
+        return false;
+
+    }
+
+}
+
+
+/* ==================================================
    TOAST
-========================================================= */
+================================================== */
 
 function toast(message){
 
@@ -954,20 +1732,21 @@ function toast(message){
 }
 
 
-/* =========================================================
+/* ==================================================
    PRICE
-========================================================= */
+================================================== */
 
 function formatPrice(price){
 
-    return "€" + Number(price).toFixed(2);
+    return "€" +
+    Number(price).toFixed(2);
 
 }
 
 
-/* =========================================================
+/* ==================================================
    CATEGORIES
-========================================================= */
+================================================== */
 
 function renderCategories(){
 
@@ -975,8 +1754,12 @@ function renderCategories(){
     categories.map(category=>`
 
         <button
-            class="category ${category===currentCategory?"active":""}"
-            onclick="setCategory('${category}')"
+            class="category ${
+                category===currentCategory
+                ? "active"
+                : ""
+            }"
+            onclick="setCategory('${escapeHTML(category)}')"
         >
             ${escapeHTML(category)}
         </button>
@@ -996,9 +1779,9 @@ function setCategory(category){
 }
 
 
-/* =========================================================
+/* ==================================================
    PRODUCT CARD
-========================================================= */
+================================================== */
 
 function productCard(product){
 
@@ -1007,86 +1790,85 @@ function productCard(product){
 
     return `
 
-        <article class="product">
+<article class="product">
 
-            <div
-                class="product-image"
-                onclick="openProduct(${product.id})"
-                style="cursor:pointer"
-            >
+<div
+class="product-image"
+onclick="openProduct(${Number(product.id)})"
+style="cursor:pointer"
+>
 
-                ${
-                    product.image
-                    ?
-                    `<img
-                        src="${escapeHTML(product.image)}"
-                        alt="${escapeHTML(product.name)}"
-                        loading="lazy"
-                    >`
-                    :
-                    `<div class="placeholder">
-                        PRODUCT IMAGE
-                    </div>`
-                }
+${
+product.image
+?
+`<img
+src="${escapeHTML(product.image)}"
+alt="${escapeHTML(product.name)}"
+>`
+:
+`<div class="placeholder">
+PRODUCT IMAGE
+</div>`
+}
 
-                ${
-                    product.newest
-                    ?
-                    `<div class="badge">NEW</div>`
-                    :
-                    ""
-                }
+${
+product.newest
+?
+`<div class="badge">NEW</div>`
+:
+""
+}
 
-                <button
-                    class="fav ${isFavorite?"active":""}"
-                    onclick="event.stopPropagation();toggleFavorite(${product.id})"
-                >
-                    ${isFavorite?"♥":"♡"}
-                </button>
+<button
+class="fav ${isFavorite ? "active" : ""}"
+onclick="event.stopPropagation();toggleFavorite(${Number(product.id)})"
+>
+${isFavorite ? "♥" : "♡"}
+</button>
 
-            </div>
+</div>
 
-            <div class="product-info">
+<div class="product-info">
 
-                <div class="product-category">
-                    ${escapeHTML(product.category)}
-                </div>
+<div class="product-category">
+${escapeHTML(product.category)}
+</div>
 
-                <div
-                    class="product-name"
-                    onclick="openProduct(${product.id})"
-                    style="cursor:pointer"
-                >
-                    ${escapeHTML(product.name)}
-                </div>
+<div
+class="product-name"
+onclick="openProduct(${Number(product.id)})"
+style="cursor:pointer"
+>
+${escapeHTML(product.name)}
+</div>
 
-                <div class="product-bottom">
+<div class="product-bottom">
 
-                    <div class="product-price">
-                        ${formatPrice(product.price)}
-                    </div>
+<div class="product-price">
+${formatPrice(product.price)}
+</div>
 
-                    <button
-                        class="view-btn"
-                        onclick="openProduct(${product.id})"
-                    >
-                        VIEW →
-                    </button>
+<button
+class="view-btn"
+onclick="openProduct(${Number(product.id)})"
+>
+VIEW →
+</button>
 
-                </div>
+</div>
 
-            </div>
+</div>
 
-        </article>
+</article>
 
-    `;
+`;
 
 }
 
 
-/* =========================================================
+/* ==================================================
    PRODUCTS
-========================================================= */
+================================================== */
 
 function renderProducts(){
 
@@ -1124,8 +1906,9 @@ function renderProducts(){
 
         filtered.sort(
             (a,b)=>
-            a.name.localeCompare(
-                b.name
+            String(a.name)
+            .localeCompare(
+                String(b.name)
             )
         );
 
@@ -1135,7 +1918,7 @@ function renderProducts(){
 
         filtered.sort(
             (a,b)=>
-            Number(a.price)-
+            Number(a.price) -
             Number(b.price)
         );
 
@@ -1145,7 +1928,7 @@ function renderProducts(){
 
         filtered.sort(
             (a,b)=>
-            Number(b.price)-
+            Number(b.price) -
             Number(a.price)
         );
 
@@ -1155,8 +1938,8 @@ function renderProducts(){
 
         filtered.sort(
             (a,b)=>
-            Number(b.newest)-
-            Number(a.newest)
+            Number(Boolean(b.newest)) -
+            Number(Boolean(a.newest))
         );
 
     }
@@ -1166,12 +1949,10 @@ function renderProducts(){
 
     if(!filtered.length){
 
-        productsGrid.innerHTML=`
-
+        productsGrid.innerHTML = `
             <div class="empty">
                 No products found.
             </div>
-
         `;
 
         return;
@@ -1184,9 +1965,9 @@ function renderProducts(){
 }
 
 
-/* =========================================================
+/* ==================================================
    FEATURED
-========================================================= */
+================================================== */
 
 function renderFeatured(){
 
@@ -1197,12 +1978,10 @@ function renderFeatured(){
 
     if(!featured.length){
 
-        featuredGrid.innerHTML=`
-
+        featuredGrid.innerHTML = `
             <div class="empty">
-                No featured products.
+                No featured products yet.
             </div>
-
         `;
 
         return;
@@ -1215,37 +1994,39 @@ function renderFeatured(){
 }
 
 
-/* =========================================================
+/* ==================================================
    SEARCH
-========================================================= */
+================================================== */
 
 searchInput.addEventListener(
-"input",
-e=>{
+    "input",
+    event=>{
 
-    searchTerm =
-    e.target.value;
+        searchTerm =
+        event.target.value;
 
-    renderProducts();
+        renderProducts();
 
-});
+    }
+);
 
 
 sortSelect.addEventListener(
-"change",
-e=>{
+    "change",
+    event=>{
 
-    sortType =
-    e.target.value;
+        sortType =
+        event.target.value;
 
-    renderProducts();
+        renderProducts();
 
-});
+    }
+);
 
 
-/* =========================================================
+/* ==================================================
    FAVORITES
-========================================================= */
+================================================== */
 
 function toggleFavorite(id){
 
@@ -1262,10 +2043,7 @@ function toggleFavorite(id){
 
     }
 
-    localStorage.setItem(
-        "dripvault_favorites",
-        JSON.stringify(favorites)
-    );
+    saveLocalData();
 
     updateFavoriteCount();
 
@@ -1286,146 +2064,147 @@ function updateFavoriteCount(){
 document
 .getElementById("favoritesBtn")
 .addEventListener(
-"click",
-()=>{
+    "click",
+    ()=>{
 
-    const favs =
-    products.filter(
-        p=>favorites.includes(p.id)
-    );
+        const favs =
+        products.filter(
+            p=>favorites.includes(p.id)
+        );
 
-    if(!favs.length){
+        if(!favs.length){
 
-        toast("No favorites yet");
+            toast("No favorites yet");
 
-        return;
+            return;
+
+        }
+
+        productsGrid.innerHTML =
+        favs.map(productCard).join("");
+
+        productCount.textContent =
+        favs.length+" FAVORITES";
+
+        document
+        .getElementById("products")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
 
     }
-
-    productsGrid.innerHTML =
-    favs.map(productCard).join("");
-
-    productCount.textContent =
-    favs.length+" FAVORITES";
-
-    document
-    .getElementById("products")
-    .scrollIntoView({
-        behavior:"smooth"
-    });
-
-});
+);
 
 
-/* =========================================================
-   PRODUCT
-========================================================= */
+/* ==================================================
+   PRODUCT VIEW
+================================================== */
 
 function openProduct(id){
 
     const product =
     products.find(
-        p=>p.id===id
+        p=>Number(p.id)===Number(id)
     );
 
     if(!product) return;
 
     document.getElementById(
         "productModalContent"
-    ).innerHTML=`
+    ).innerHTML = `
 
-        <div class="product-modal-grid">
+<div class="product-modal-grid">
 
-            <div class="product-modal-image">
+<div class="product-modal-image">
 
-                ${
-                    product.image
-                    ?
-                    `<img
-                        src="${escapeHTML(product.image)}"
-                        alt="${escapeHTML(product.name)}"
-                    >`
-                    :
-                    `<span style="color:#444">
-                        PRODUCT IMAGE
-                    </span>`
-                }
+${
+product.image
+?
+`<img
+src="${escapeHTML(product.image)}"
+alt="${escapeHTML(product.name)}"
+>`
+:
+`<span style="color:#444">
+PRODUCT IMAGE
+</span>`
+}
 
-            </div>
+</div>
 
-            <div>
+<div>
 
-                <div style="
-                    color:#555;
-                    font-size:9px;
-                    letter-spacing:2px;
-                    margin-bottom:10px;
-                ">
-                    ${escapeHTML(product.category)}
-                </div>
+<div style="
+color:#555;
+font-size:9px;
+letter-spacing:2px;
+margin-bottom:10px;
+">
+${escapeHTML(product.category)}
+</div>
 
-                <h2 style="
-                    font-size:28px;
-                    line-height:1.1;
-                    margin-bottom:15px;
-                ">
-                    ${escapeHTML(product.name)}
-                </h2>
+<h2 style="
+font-size:28px;
+line-height:1.1;
+margin-bottom:15px;
+">
+${escapeHTML(product.name)}
+</h2>
 
-                <div style="
-                    color:#888;
-                    font-size:18px;
-                    margin-bottom:20px;
-                ">
-                    ${formatPrice(product.price)}
-                </div>
+<div style="
+color:#888;
+font-size:18px;
+margin-bottom:20px;
+">
+${formatPrice(product.price)}
+</div>
 
-                <p style="
-                    color:#666;
-                    font-size:11px;
-                    line-height:1.7;
-                    margin-bottom:25px;
-                ">
-                    Product source information.
-                    Add the source to your order or open
-                    the source page.
-                </p>
+<p style="
+color:#666;
+font-size:11px;
+line-height:1.7;
+margin-bottom:25px;
+">
+Product source information.
+Add the source to your order or open
+the source page.
+</p>
 
-                <div style="
-                    display:flex;
-                    gap:8px;
-                    flex-wrap:wrap;
-                ">
+<div style="
+display:flex;
+gap:8px;
+flex-wrap:wrap;
+">
 
-                    <button
-                        class="btn primary"
-                        onclick="addToCart(${product.id})"
-                    >
-                        ADD TO CART
-                    </button>
+<button
+class="btn primary"
+onclick="addToCart(${Number(product.id)})"
+>
+ADD TO CART
+</button>
 
-                    ${
-                        product.source
-                        ?
-                        `<a
-                            href="${escapeHTML(product.source)}"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            class="secondary-btn"
-                        >
-                            OPEN SOURCE →
-                        </a>`
-                        :
-                        ""
-                    }
+${
+product.source
+?
+`<a
+href="${escapeHTML(product.source)}"
+target="_blank"
+rel="noopener noreferrer"
+class="secondary-btn"
+>
+OPEN SOURCE →
+</a>`
+:
+""
+}
 
-                </div>
+</div>
 
-            </div>
+</div>
 
-        </div>
+</div>
 
-    `;
+`;
 
     document
     .getElementById("productModal")
@@ -1443,25 +2222,22 @@ function closeProduct(){
 }
 
 
-/* =========================================================
+/* ==================================================
    CART
-========================================================= */
+================================================== */
 
 function addToCart(id){
 
     const product =
     products.find(
-        p=>p.id===id
+        p=>Number(p.id)===Number(id)
     );
 
     if(!product) return;
 
-    cart.push(id);
+    cart.push(product.id);
 
-    localStorage.setItem(
-        "dripvault_cart",
-        JSON.stringify(cart)
-    );
+    saveLocalData();
 
     updateCartCount();
 
@@ -1474,12 +2250,10 @@ function removeFromCart(index){
 
     cart.splice(index,1);
 
-    localStorage.setItem(
-        "dripvault_cart",
-        JSON.stringify(cart)
-    );
+    saveLocalData();
 
     updateCartCount();
+
     renderCart();
 
 }
@@ -1498,7 +2272,7 @@ function getCartProducts(){
     return cart
     .map(id=>
         products.find(
-            p=>p.id===id
+            p=>Number(p.id)===Number(id)
         )
     )
     .filter(Boolean);
@@ -1521,87 +2295,78 @@ function getCartTotal(){
 function renderCart(){
 
     const items =
-    document.getElementById(
-        "cartItems"
-    );
+    document.getElementById("cartItems");
 
     const cartProducts =
     getCartProducts();
 
     if(!cartProducts.length){
 
-        items.innerHTML=`
-
+        items.innerHTML = `
             <div class="empty">
                 Your cart is empty.
             </div>
-
         `;
 
     }else{
 
         items.innerHTML =
-        cartProducts
-        .map((p,index)=>`
+        cartProducts.map((p,index)=>`
 
-            <div style="
-                display:flex;
-                justify-content:space-between;
-                align-items:center;
-                gap:15px;
-                padding:14px 0;
-                border-bottom:1px solid #1d1d1d;
-            ">
+<div style="
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:15px;
+padding:14px 0;
+border-bottom:1px solid #1d1d1d;
+">
 
-                <div>
+<div>
 
-                    <strong style="
-                        font-size:12px;
-                    ">
-                        ${escapeHTML(p.name)}
-                    </strong>
+<strong style="font-size:12px">
+${escapeHTML(p.name)}
+</strong>
 
-                    <div style="
-                        color:#666;
-                        font-size:9px;
-                        margin-top:5px;
-                    ">
-                        ${escapeHTML(p.category)}
-                    </div>
+<div style="
+color:#666;
+font-size:9px;
+margin-top:5px;
+">
+${escapeHTML(p.category)}
+</div>
 
-                </div>
+</div>
 
-                <div style="
-                    display:flex;
-                    align-items:center;
-                    gap:10px;
-                ">
+<div style="
+display:flex;
+align-items:center;
+gap:10px;
+">
 
-                    <span style="color:#888">
-                        ${formatPrice(p.price)}
-                    </span>
+<span style="color:#888">
+${formatPrice(p.price)}
+</span>
 
-                    <button
-                        class="small-btn delete"
-                        onclick="removeFromCart(${index})"
-                    >
-                        ×
-                    </button>
+<button
+class="small-btn delete"
+onclick="removeFromCart(${index})"
+>
+×
+</button>
 
-                </div>
+</div>
 
-            </div>
+</div>
 
-        `).join("");
+`).join("");
 
     }
 
     document.getElementById(
         "cartTotal"
     ).textContent =
-    formatPrice(
-        getCartTotal()
-    );
+    formatPrice(getCartTotal());
 
 }
 
@@ -1626,9 +2391,9 @@ function closeCart(){
 }
 
 
-/* =========================================================
+/* ==================================================
    CHECKOUT
-========================================================= */
+================================================== */
 
 function openCheckout(){
 
@@ -1652,8 +2417,7 @@ function openCheckout(){
 
     document.getElementById(
         "orderField"
-    ).value =
-    order;
+    ).value = order;
 
     document.getElementById(
         "totalField"
@@ -1683,9 +2447,9 @@ function closeCheckout(){
 }
 
 
-/* =========================================================
+/* ==================================================
    LOGIN
-========================================================= */
+================================================== */
 
 function showLogin(){
 
@@ -1705,9 +2469,9 @@ function closeLogin(){
 }
 
 
-/* =========================================================
+/* ==================================================
    ADMIN
-========================================================= */
+================================================== */
 
 function openAdmin(){
 
@@ -1739,6 +2503,10 @@ function closeAdmin(){
 
 }
 
+
+/* ==================================================
+   ADMIN TABLE
+================================================== */
 
 function renderAdmin(){
 
@@ -1775,76 +2543,76 @@ function renderAdmin(){
     ).innerHTML =
     products.map(p=>`
 
-        <tr>
+<tr>
 
-            <td>
+<td>
 
-                <div class="admin-product">
+<div class="admin-product">
 
-                    ${
-                        p.image
-                        ?
-                        `<img
-                            class="admin-thumb"
-                            src="${escapeHTML(p.image)}"
-                        >`
-                        :
-                        `<div class="admin-thumb"></div>`
-                    }
+${
+p.image
+?
+`<img
+class="admin-thumb"
+src="${escapeHTML(p.image)}"
+>`
+:
+`<div class="admin-thumb"></div>`
+}
 
-                    <span>
-                        ${escapeHTML(p.name)}
-                    </span>
+<span>
+${escapeHTML(p.name)}
+</span>
 
-                </div>
+</div>
 
-            </td>
+</td>
 
-            <td>
-                ${escapeHTML(p.category)}
-            </td>
+<td>
+${escapeHTML(p.category)}
+</td>
 
-            <td>
-                ${formatPrice(p.price)}
-            </td>
+<td>
+${formatPrice(p.price)}
+</td>
 
-            <td>
-                ${p.featured?"⭐ ":""}
-                ${p.newest?"NEW":""}
-            </td>
+<td>
+${p.featured ? "⭐ " : ""}
+${p.newest ? "NEW" : ""}
+</td>
 
-            <td>
+<td>
 
-                <div class="table-actions">
+<div class="table-actions">
 
-                    <button
-                        class="small-btn"
-                        onclick="editProduct(${p.id})"
-                    >
-                        EDIT
-                    </button>
+<button
+class="small-btn"
+onclick="editProduct(${Number(p.id)})"
+>
+EDIT
+</button>
 
-                    <button
-                        class="small-btn delete"
-                        onclick="deleteProduct(${p.id})"
-                    >
-                        DELETE
-                    </button>
+<button
+class="small-btn delete"
+onclick="deleteProduct(${Number(p.id)})"
+>
+DELETE
+</button>
 
-                </div>
+</div>
 
-            </td>
+</td>
 
-        </tr>
+</tr>
 
-    `).join("");
+`).join("");
 
 }
 
 
-/* =========================================================
+/* ==================================================
    PRODUCT FORM
-========================================================= */
+================================================== */
 
 function populateCategorySelect(){
 
@@ -1855,9 +2623,7 @@ function populateCategorySelect(){
 
     select.innerHTML =
     categories
-    .filter(
-        c=>c!=="All"
-    )
+    .filter(c=>c!=="All")
     .map(c=>`
         <option value="${escapeHTML(c)}">
             ${escapeHTML(c)}
@@ -1936,7 +2702,7 @@ function editProduct(
 
     const product =
     products.find(
-        p=>p.id===id
+        p=>Number(p.id)===Number(id)
     );
 
     if(!product) return;
@@ -1999,7 +2765,11 @@ function editProduct(
 }
 
 
-function saveProduct(){
+/* ==================================================
+   SAVE PRODUCT
+================================================== */
+
+async function saveProduct(){
 
     const id =
     document.getElementById(
@@ -2046,13 +2816,15 @@ function saveProduct(){
     if(!name){
 
         toast("Enter product name");
+
         return;
 
     }
 
-    if(!price || price<0){
+    if(!Number.isFinite(price) || price<0){
 
         toast("Enter valid price");
+
         return;
 
     }
@@ -2061,43 +2833,20 @@ function saveProduct(){
 
         const product =
         products.find(
-            p=>p.id===Number(id)
+            p=>Number(p.id)===Number(id)
         );
 
         if(product){
 
-            product.name =
-            name;
-
-            product.price =
-            price;
-
-            product.category =
-            category;
-
-            product.image =
-            image;
-
-            product.source =
-            source;
-
-            product.featured =
-            featured;
-
-            product.newest =
-            newest;
+            product.name=name;
+            product.price=price;
+            product.category=category;
+            product.image=image;
+            product.source=source;
+            product.featured=featured;
+            product.newest=newest;
 
         }
-
-        /*
-          ВАЖНО:
-          Тук промяната се пази само локално.
-          За запис в GitHub ще добавим Cloudflare Worker.
-        */
-
-        toast(
-            "Product updated locally"
-        );
 
     }else{
 
@@ -2115,32 +2864,57 @@ function saveProduct(){
 
         });
 
-        toast(
-            "Product added locally"
-        );
+    }
+
+    /*
+     * Най-важната промяна:
+     * вече НЕ пазим products в localStorage.
+     * Изпращаме ги към Cloudflare → GitHub.
+     */
+
+    toast("Записване...");
+
+    const success =
+    await saveProductsToServer();
+
+    if(!success){
+
+        /*
+         * При грешка презареждаме
+         * оригиналните продукти.
+         */
+
+        await loadProducts();
+
+        return;
 
     }
 
     renderProducts();
     renderFeatured();
     renderAdmin();
-
     updateHeroCount();
 
     closeProductForm();
 
+    toast(
+        id
+        ? "Product updated"
+        : "Product added"
+    );
+
 }
 
 
-/* =========================================================
+/* ==================================================
    DELETE
-========================================================= */
+================================================== */
 
-function deleteProduct(id){
+async function deleteProduct(id){
 
     const product =
     products.find(
-        p=>p.id===id
+        p=>Number(p.id)===Number(id)
     );
 
     if(!product) return;
@@ -2149,36 +2923,49 @@ function deleteProduct(id){
         `Delete "${product.name}"?`
     )) return;
 
+    const oldProducts =
+    [...products];
+
     products =
     products.filter(
-        p=>p.id!==id
+        p=>Number(p.id)!==Number(id)
     );
+
+    toast("Deleting...");
+
+    const success =
+    await saveProductsToServer();
+
+    if(!success){
+
+        products =
+        oldProducts;
+
+        renderProducts();
+        renderFeatured();
+        renderAdmin();
+
+        return;
+
+    }
 
     favorites =
     favorites.filter(
-        favId=>
+        favoriteId =>
         products.some(
-            p=>p.id===favId
+            p=>Number(p.id)===Number(favoriteId)
         )
     );
 
     cart =
     cart.filter(
-        cartId=>
+        cartId =>
         products.some(
-            p=>p.id===cartId
+            p=>Number(p.id)===Number(cartId)
         )
     );
 
-    localStorage.setItem(
-        "dripvault_favorites",
-        JSON.stringify(favorites)
-    );
-
-    localStorage.setItem(
-        "dripvault_cart",
-        JSON.stringify(cart)
-    );
+    saveLocalData();
 
     renderProducts();
     renderFeatured();
@@ -2188,16 +2975,14 @@ function deleteProduct(id){
     updateFavoriteCount();
     updateCartCount();
 
-    toast(
-        "Product deleted locally"
-    );
+    toast("Product deleted");
 
 }
 
 
-/* =========================================================
+/* ==================================================
    EXPORT
-========================================================= */
+================================================== */
 
 function exportProducts(){
 
@@ -2211,7 +2996,9 @@ function exportProducts(){
     const blob =
     new Blob(
         [data],
-        {type:"application/json"}
+        {
+            type:"application/json"
+        }
     );
 
     const url =
@@ -2220,11 +3007,10 @@ function exportProducts(){
     const a =
     document.createElement("a");
 
-    a.href =
-    url;
+    a.href=url;
 
     a.download =
-    "products.json";
+    "dripvault-products.json";
 
     document.body.appendChild(a);
 
@@ -2234,16 +3020,14 @@ function exportProducts(){
 
     URL.revokeObjectURL(url);
 
-    toast(
-        "products.json exported"
-    );
+    toast("Products exported");
 
 }
 
 
-/* =========================================================
+/* ==================================================
    IMPORT
-========================================================= */
+================================================== */
 
 function importProducts(event){
 
@@ -2255,7 +3039,8 @@ function importProducts(event){
     const reader =
     new FileReader();
 
-    reader.onload=function(){
+    reader.onload =
+    async function(){
 
         try{
 
@@ -2265,30 +3050,43 @@ function importProducts(event){
             );
 
             if(!Array.isArray(imported)){
-
                 throw new Error();
-
             }
+
+            const oldProducts =
+            products;
 
             products =
             imported;
+
+            toast("Saving...");
+
+            const success =
+            await saveProductsToServer();
+
+            if(!success){
+
+                products =
+                oldProducts;
+
+                return;
+
+            }
 
             renderProducts();
             renderFeatured();
             renderAdmin();
             updateHeroCount();
 
-            toast(
-                "Products imported locally"
-            );
+            toast("Products imported");
 
         }catch{
 
-            toast(
-                "Invalid JSON"
-            );
+            toast("Invalid JSON");
 
         }
+
+        event.target.value = "";
 
     };
 
@@ -2297,43 +3095,44 @@ function importProducts(event){
 }
 
 
-/* =========================================================
+/* ==================================================
    ADMIN HOTKEY
-========================================================= */
+================================================== */
 
 document.addEventListener(
-"keydown",
-event=>{
+    "keydown",
+    event=>{
 
-    if(
-        event.ctrlKey &&
-        event.shiftKey &&
-        event.key.toLowerCase()==="a"
-    ){
+        if(
+            event.ctrlKey &&
+            event.shiftKey &&
+            event.key.toLowerCase()==="a"
+        ){
 
-        event.preventDefault();
+            event.preventDefault();
 
-        openAdmin();
+            openAdmin();
+
+        }
+
+        if(event.key==="Escape"){
+
+            closeAdmin();
+            closeLogin();
+            closeProduct();
+            closeProductForm();
+            closeCart();
+            closeCheckout();
+
+        }
 
     }
-
-    if(event.key==="Escape"){
-
-        closeAdmin();
-        closeLogin();
-        closeProduct();
-        closeProductForm();
-        closeCart();
-        closeCheckout();
-
-    }
-
-});
+);
 
 
-/* =========================================================
+/* ==================================================
    HERO COUNT
-========================================================= */
+================================================== */
 
 function updateHeroCount(){
 
@@ -2345,42 +3144,30 @@ function updateHeroCount(){
 }
 
 
-/* =========================================================
+/* ==================================================
    ESCAPE HTML
-========================================================= */
+================================================== */
 
 function escapeHTML(value){
 
-    return String(
-        value ?? ""
-    )
-    .replaceAll(
-        "&",
-        "&amp;"
-    )
-    .replaceAll(
-        "<",
-        "&lt;"
-    )
-    .replaceAll(
-        ">",
-        "&gt;"
-    )
-    .replaceAll(
-        '"',
-        "&quot;"
-    )
-    .replaceAll(
-        "'",
-        "&#039;"
-    );
+    return String(value ?? "")
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
 
 }
 
 
-/* =========================================================
-   START
-========================================================= */
+/* ==================================================
+   INIT
+================================================== */
+
+renderCategories();
+
+updateFavoriteCount();
+updateCartCount();
 
 loadProducts();
 
@@ -2388,4 +3175,3 @@ loadProducts();
 
 </body>
 </html>
-```
